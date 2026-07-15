@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1265ed">
+<title>KBU Cost Control Pro V2.0</title>
+<style>
+*{box-sizing:border-box}
+:root{--blue:#1265ed;--navy:#073c7a;--bg:#edf4ff;--text:#172033;--muted:#667085;--green:#07883d;--red:#d52b2b;--yellow:#b87900}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text);padding-bottom:104px}
+.header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:28px 22px 34px;border-radius:0 0 30px 30px}
+.header h1{margin:0;font-size:29px}.header p{margin:8px 0}.badge{display:inline-block;background:#d9ffe9;color:#12643b;padding:8px 14px;border-radius:30px;font-weight:bold}
+main{padding:18px}.card{background:#fff;padding:20px;border-radius:22px;margin-bottom:18px;box-shadow:0 6px 20px rgba(21,54,93,.09)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{background:#f2f6ff;padding:16px 8px;border-radius:16px;text-align:center}
+.stat small{display:block;color:#667085;margin-bottom:8px}.stat strong{font-size:17px}.green{color:var(--green)}.red{color:var(--red)}.yellow{color:var(--yellow)}
+label{display:block;font-weight:bold;margin:15px 0 7px}input,select,textarea{width:100%;padding:14px;border:1px solid #cbd5e1;border-radius:13px;font-size:16px;background:#fff}
+textarea{min-height:86px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.primary,.secondary,.danger,.success{width:100%;padding:14px;margin-top:14px;border-radius:13px;font-size:16px;font-weight:bold}
+.primary{border:0;background:#1265ed;color:#fff}.secondary{border:1px solid #cbd5e1;background:#fff;color:#183153}.danger{border:0;background:#fff0f0;color:#c62828}.success{border:0;background:#0f9d58;color:#fff}
+.page{display:none}.page.active{display:block}.row{border:1px solid #e1e7f0;border-radius:16px;padding:14px;margin-bottom:12px}.rowhead{display:flex;justify-content:space-between;gap:10px}
+.title{font-weight:bold}.muted{font-size:14px;color:#667085;line-height:1.5}.total{font-weight:bold;color:#1265ed;text-align:right}.small{border:0;background:#fff0f0;color:#c62828;border-radius:9px;padding:8px 10px;margin-top:10px}
+.empty{text-align:center;color:#7a8494;padding:22px 8px}.status{display:inline-block;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:bold}.aman{background:#dcfce7;color:#166534}.waspada{background:#fef3c7;color:#92400e}.over{background:#fee2e2;color:#991b1b}
+.progress{height:14px;background:#e5e7eb;border-radius:999px;overflow:hidden}.bar{height:100%;background:#1265ed}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:10px 6px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}.right{text-align:right}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-around;background:#fff;padding:8px 3px 14px;box-shadow:0 -5px 20px rgba(0,0,0,.1);z-index:20;overflow-x:auto}
+nav button{border:0;background:transparent;color:#667085;padding:10px 7px;border-radius:13px;font-size:11px;white-space:nowrap}nav button.active{background:#e7f0ff;color:#1265ed;font-weight:bold}
+.doc-preview{background:#fff;color:#111;border:1px solid #d7dce3;padding:28px;min-height:720px;font-family:"Times New Roman",serif}
+.doc-head{text-align:center;border-bottom:3px double #000;padding-bottom:10px;margin-bottom:20px}.doc-head h2,.doc-head h3{margin:2px}.doc-title{text-align:center;text-decoration:underline;margin:20px 0}
+.doc-table{width:100%;border-collapse:collapse}.doc-table th,.doc-table td{border:1px solid #000;padding:8px}.signature{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:50px;text-align:center}.signature-space{height:75px}
+.doc-grid{display:grid;grid-template-columns:160px 10px 1fr;gap:6px;margin:10px 0}.toolbar{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:420px){.header h1{font-size:25px}.doc-grid{grid-template-columns:120px 8px 1fr}.doc-preview{padding:18px;font-size:14px}}
+@media print{
+  body{background:#fff;padding:0}.header,nav,.no-print{display:none!important}main{padding:0}.page{display:none!important}#dokumen{display:block!important}.card{box-shadow:none;padding:0;margin:0}.doc-preview{border:0;min-height:auto;padding:12mm}
+  @page{size:A4;margin:10mm}
+}
+</style>
+</head>
+<body>
+<header class="header"><h1>KBU Cost Control Pro</h1><p>PT KALTIM BUMI UNGGUL</p><span class="badge">V2.0 • Cost Control & Dokumen</span></header>
+
+<main>
+<section id="dashboard" class="page active">
+<div class="card"><h2>Dashboard Ringkas</h2><div class="grid">
+<div class="stat"><small>Nilai Kontrak</small><strong id="nilaiKontrak">Rp0</strong></div>
+<div class="stat"><small>Target Tonase</small><strong id="targetTonase">0 Ton</strong></div>
+<div class="stat"><small>Budget HPP</small><strong id="budgetHpp">Rp0</strong></div>
+<div class="stat"><small>Realisasi</small><strong id="totalRealisasi">Rp0</strong></div>
+<div class="stat"><small>Sisa Budget</small><strong id="sisaBudget">Rp0</strong></div>
+<div class="stat"><small>Profit Aktual</small><strong id="profitAktual">Rp0</strong></div>
+<div class="stat"><small>HPP Aktual/Ton</small><strong id="hppAktualTon">Rp0</strong></div>
+<div class="stat"><small>Margin Aktual</small><strong id="marginAktual">0%</strong></div>
+</div></div>
+<div class="card"><h2>Progress Budget</h2><div class="progress"><div id="budgetBar" class="bar" style="width:0%"></div></div><p id="budgetText">0% budget terpakai</p></div>
+<div class="card"><h2>Proyek Aktif</h2><div id="projectSummary" class="empty">Belum ada data proyek.</div></div>
+</section>
+
+<section id="project" class="page"><div class="card"><h2>Data Proyek</h2>
+<label>Nama Proyek</label><input id="namaProyek" placeholder="Loading Ban Maloy–Kendal">
+<label>Klien / Consignee</label><input id="klien" placeholder="Nama pembeli / penerima">
+<label>Nomor Kontrak</label><input id="nomorKontrak">
+<div class="two"><div><label>Target Tonase</label><input id="tonase" type="number"></div><div><label>Harga Jual/Ton</label><input id="hargaJual" type="number"></div></div>
+<div class="two"><div><label>Pelabuhan Muat</label><input id="pelabuhanMuat"></div><div><label>Pelabuhan Bongkar</label><input id="pelabuhanBongkar"></div></div>
+<button class="primary" onclick="simpanProyek()">Simpan Data Proyek</button></div></section>
+
+<section id="hpp" class="page"><div class="card"><h2>Input Budget HPP</h2>
+<label>Komponen</label><input id="hppKomponen" placeholder="Contoh: Harga Beli Ban">
+<label>Jenis Perhitungan</label><select id="hppJenis"><option value="per_ton">Per Ton</option><option value="per_rit">Per Rit</option><option value="per_hari">Per Hari</option><option value="per_unit">Per Unit</option><option value="lumpsum">Lumpsum</option></select>
+<div class="two"><div><label>Qty</label><input id="hppQty" type="number"></div><div><label>Harga/Tarif</label><input id="hppHarga" type="number"></div></div>
+<button class="primary" onclick="tambahHpp()">+ Tambah HPP</button></div>
+<div class="card"><h2>Daftar Budget HPP</h2><div id="hppList" class="empty">Belum ada HPP.</div></div></section>
+
+<section id="realisasi" class="page"><div class="card"><h2>Input Realisasi</h2>
+<label>Tanggal</label><input id="realTanggal" type="date">
+<label>Komponen HPP</label><select id="realKomponen"></select>
+<label>Supplier/Penerima</label><input id="realSupplier">
+<div class="two"><div><label>Qty Aktual</label><input id="realQty" type="number"></div><div><label>Harga Aktual</label><input id="realHarga" type="number"></div></div>
+<label>Keterangan</label><textarea id="realKet"></textarea>
+<button class="primary" onclick="tambahRealisasi()">Simpan Realisasi</button></div>
+<div class="card"><h2>Riwayat Realisasi</h2><div id="realList" class="empty">Belum ada realisasi.</div></div></section>
+
+<section id="tracking" class="page"><div class="card"><h2>Tracking Budget vs Aktual</h2><div style="overflow:auto"><div id="trackList"></div></div></div></section>
+
+<section id="dokumen" class="page">
+<div class="card no-print"><h2>Generator Dokumen Operasional</h2>
+<label>Jenis Dokumen</label><select id="docType" onchange="renderDoc()">
+<option value="packing">Packing List</option><option value="skab">SKAB</option><option value="bl">Bill of Lading / B/L</option><option value="invoice">Commercial Invoice</option><option value="manifest">Manifest</option><option value="suratjalan">Surat Jalan</option><option value="bamuat">Berita Acara Muat</option><option value="babongkar">Berita Acara Bongkar</option><option value="bast">BAST Gudang</option>
+</select>
+<div class="two"><div><label>Nomor Dokumen</label><input id="docNo" placeholder="KBU/001/VII/2026"></div><div><label>Tanggal</label><input id="docTanggal" type="date"></div></div>
+<label>Shipper / Pengirim</label><input id="docShipper" value="PT KALTIM BUMI UNGGUL">
+<label>Consignee / Penerima</label><input id="docConsignee">
+<div class="two"><div><label>Tongkang</label><input id="docKapal"></div><div><label>Tugboat</label><input id="docTugboat"></div></div>
+<div class="two"><div><label>Pelabuhan Muat</label><input id="docLoadPort"></div><div><label>Pelabuhan Bongkar</label><input id="docDischargePort"></div></div>
+<label>Deskripsi Barang</label><input id="docBarang" value="Ban Bekas Kondisi Alami">
+<div class="three"><div><label>Jumlah</label><input id="docQty" type="number"></div><div><label>Satuan</label><select id="docUnit"><option>TON</option><option>PCS</option><option>UNIT</option><option>RIT</option></select></div><div><label>Harga/Ton</label><input id="docHarga" type="number"></div></div>
+<label>Keterangan Tambahan</label><textarea id="docKeterangan"></textarea>
+<div class="toolbar"><button class="primary" onclick="renderDoc()">Preview</button><button class="success" onclick="window.print()">Cetak / PDF</button></div></div>
+<div class="card"><div id="docPreview" class="doc-preview"></div></div>
+</section>
+
+<section id="backup" class="page"><div class="card"><h2>Backup & Restore</h2>
+<button class="success" onclick="backupJSON()">Download Backup JSON</button>
+<label>Restore dari File JSON</label><input id="restoreFile" type="file" accept=".json">
+<button class="secondary" onclick="restoreJSON()">Restore Data</button>
+<button class="danger" onclick="resetSemua()">Reset Semua Data</button></div></section>
+</main>
+
+<nav>
+<button id="bDashboard" class="active" onclick="buka('dashboard')">Dashboard</button>
+<button id="bProject" onclick="buka('project')">Proyek</button>
+<button id="bHpp" onclick="buka('hpp')">HPP</button>
+<button id="bRealisasi" onclick="buka('realisasi')">Realisasi</button>
+<button id="bTracking" onclick="buka('tracking')">Tracking</button>
+<button id="bDokumen" onclick="buka('dokumen')">Dokumen</button>
+<button id="bBackup" onclick="buka('backup')">Backup</button>
+</nav>
+
+<script>
+const rp=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(+n||0);
+const num=n=>new Intl.NumberFormat('id-ID',{maximumFractionDigits:2}).format(+n||0);
+const get=(k,d)=>JSON.parse(localStorage.getItem(k)||JSON.stringify(d)),set=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+const proyek=()=>get('kbu_project',null),hpp=()=>get('kbu_hpp',[]),real=()=>get('kbu_realisasi',[]);
+
+function buka(id){
+ document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.getElementById('b'+id[0].toUpperCase()+id.slice(1)).classList.add('active');
+ scrollTo(0,0);
+ if(id==='dokumen')renderDoc();
+}
+
+function simpanProyek(){
+ let d={namaProyek:namaProyek.value.trim(),klien:klien.value.trim(),nomorKontrak:nomorKontrak.value.trim(),tonase:+tonase.value||0,hargaJual:+hargaJual.value||0,pelabuhanMuat:pelabuhanMuat.value.trim(),pelabuhanBongkar:pelabuhanBongkar.value.trim()};
+ if(!d.namaProyek||d.tonase<=0||d.hargaJual<=0)return alert('Lengkapi data proyek.');
+ set('kbu_project',d);isiDokumenDariProyek();render();alert('Data proyek tersimpan.');
+}
+
+function tambahHpp(){
+ let komponen=hppKomponen.value.trim(),jenis=hppJenis.value,qty=+hppQty.value||0,harga=+hppHarga.value||0,total=qty*harga;
+ if(!komponen||total<=0)return alert('Lengkapi HPP.');
+ let d=hpp();d.push({id:Date.now(),komponen,nama:komponen,jenis,qty,harga,total});set('kbu_hpp',d);
+ hppKomponen.value=hppQty.value=hppHarga.value='';render();
+}
+
+function hapusHpp(id){if(confirm('Hapus HPP?')){set('kbu_hpp',hpp().filter(x=>x.id!==id));render()}}
+
+function tambahRealisasi(){
+ let hppId=+realKomponen.value,tanggal=realTanggal.value,supplier=realSupplier.value.trim(),qty=+realQty.value||0,harga=+realHarga.value||0,keterangan=realKet.value.trim(),h=hpp().find(x=>x.id===hppId);
+ if(!h||!tanggal||qty<=0||harga<=0)return alert('Lengkapi realisasi.');
+ let d=real();d.push({id:Date.now(),hppId,komponen:h.komponen||h.nama||'Komponen',tanggal,supplier,qty,harga,total:qty*harga,keterangan});set('kbu_realisasi',d);
+ realSupplier.value=realQty.value=realHarga.value=realKet.value='';render();
+}
+
+function hapusReal(id){if(confirm('Hapus transaksi?')){set('kbu_realisasi',real().filter(x=>x.id!==id));render()}}
+
+function render(){
+ let p=proyek(),h=hpp(),r=real(),budget=h.reduce((s,x)=>s+(+x.total||0),0),akt=r.reduce((s,x)=>s+(+x.total||0),0),nilai=p?p.tonase*p.hargaJual:0,ton=p?p.tonase:0,sisa=budget-akt,profit=nilai-akt,hppTon=ton?akt/ton:0,margin=nilai?profit/nilai*100:0,pct=budget?akt/budget*100:0;
+ nilaiKontrak.textContent=rp(nilai);targetTonase.textContent=num(ton)+' Ton';budgetHpp.textContent=rp(budget);totalRealisasi.textContent=rp(akt);sisaBudget.textContent=rp(sisa);sisaBudget.className=sisa>=0?'green':'red';profitAktual.textContent=rp(profit);profitAktual.className=profit>=0?'green':'red';hppAktualTon.textContent=rp(hppTon);marginAktual.textContent=margin.toFixed(2)+'%';budgetBar.style.width=Math.min(pct,100)+'%';budgetBar.style.background=pct>100?'#d52b2b':pct>=90?'#b87900':'#1265ed';budgetText.textContent=pct.toFixed(2)+'% budget terpakai';
+ projectSummary.innerHTML=p?`<b>${p.namaProyek}</b><p>Klien: ${p.klien||'-'}</p><p>Nomor Kontrak: ${p.nomorKontrak||'-'}</p><p>Rute: ${p.pelabuhanMuat||'-'} → ${p.pelabuhanBongkar||'-'}</p>`:'Belum ada data proyek.';
+ if(p){namaProyek.value=p.namaProyek||'';klien.value=p.klien||'';nomorKontrak.value=p.nomorKontrak||'';tonase.value=p.tonase||'';hargaJual.value=p.hargaJual||'';pelabuhanMuat.value=p.pelabuhanMuat||'';pelabuhanBongkar.value=p.pelabuhanBongkar||''}
+ hppList.className=h.length?'':'empty';hppList.innerHTML=h.length?h.map(x=>`<div class="row"><div class="rowhead"><div><div class="title">${x.komponen||x.nama||'Komponen HPP'}</div><div class="muted">${x.jenis||'-'}<br>${num(x.qty)} × ${rp(x.harga)}</div></div><div class="total">${rp(x.total)}</div></div><button class="small" onclick="hapusHpp(${x.id})">Hapus</button></div>`).join(''):'Belum ada HPP.';
+ realKomponen.innerHTML=h.length?'<option value="">Pilih komponen</option>'+h.map(x=>`<option value="${x.id}">${x.komponen||x.nama||'Komponen HPP'}</option>`).join(''):'<option>Belum ada HPP</option>';
+ realList.className=r.length?'':'empty';realList.innerHTML=r.length?r.slice().reverse().map(x=>`<div class="row"><div class="rowhead"><div><div class="title">${x.komponen||'Komponen'}</div><div class="muted">${x.tanggal}<br>${x.supplier||'-'}<br>${num(x.qty)} × ${rp(x.harga)}</div></div><div class="total">${rp(x.total)}</div></div><button class="small" onclick="hapusReal(${x.id})">Hapus</button></div>`).join(''):'Belum ada realisasi.';
+ let t=h.map(x=>{let aktual=r.filter(y=>y.hppId===x.id).reduce((s,y)=>s+y.total,0),sel=aktual-x.total,persen=x.total?aktual/x.total*100:0;return{...x,aktual,sel,persen}});
+ trackList.innerHTML=t.length?`<table><tr><th>Komponen</th><th class="right">Budget</th><th class="right">Aktual</th><th class="right">Selisih</th></tr>${t.map(x=>`<tr><td><b>${x.komponen||x.nama||'Komponen'}</b><br><span class="status ${x.sel>0?'over':x.persen>=90?'waspada':'aman'}">${x.sel>0?'OVER':x.persen>=90?'WASPADA':'AMAN'}</span></td><td class="right">${rp(x.total)}</td><td class="right">${rp(x.aktual)}</td><td class="right ${x.sel>0?'red':'green'}">${x.sel>0?'+':''}${rp(x.sel)}</td></tr>`).join('')}</table>`:'Belum ada tracking.';
+}
+
+function isiDokumenDariProyek(){
+ let p=proyek();if(!p)return;
+ docConsignee.value=p.klien||'';docLoadPort.value=p.pelabuhanMuat||'';docDischargePort.value=p.pelabuhanBongkar||'';docQty.value=p.tonase||'';docHarga.value=p.hargaJual||'';
+}
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function tanggalIndo(v){if(!v)return'-';let d=new Date(v+'T00:00:00');return d.toLocaleDateString('id-ID',{day:'2-digit',month:'long',year:'numeric'})}
+
+function renderDoc(){
+ let type=docType.value,no=docNo.value||'-',tgl=tanggalIndo(docTanggal.value),ship=docShipper.value||'-',cons=docConsignee.value||'-',kapal=docKapal.value||'-',tug=docTugboat.value||'-',lp=docLoadPort.value||'-',dp=docDischargePort.value||'-',barang=docBarang.value||'-',qty=+docQty.value||0,unit=docUnit.value,harga=+docHarga.value||0,ket=docKeterangan.value||'-',total=qty*harga;
+ let title={packing:'PACKING LIST',skab:'SURAT KETERANGAN ASAL BARANG (SKAB)',bl:'BILL OF LADING',invoice:'COMMERCIAL INVOICE',manifest:'MANIFEST MUATAN',suratjalan:'SURAT JALAN',bamuat:'BERITA ACARA PEMUATAN',babongkar:'BERITA ACARA PEMBONGKARAN',bast:'BERITA ACARA SERAH TERIMA'}[type];
+ let body='';
+ if(type==='packing'||type==='manifest'){
+  body=`<div class="doc-grid"><b>Shipper</b><span>:</span><span>${esc(ship)}</span><b>Consignee</b><span>:</span><span>${esc(cons)}</span><b>Vessel/Tongkang</b><span>:</span><span>${esc(kapal)} / ${esc(tug)}</span><b>Port of Loading</b><span>:</span><span>${esc(lp)}</span><b>Port of Discharge</b><span>:</span><span>${esc(dp)}</span></div><table class="doc-table"><tr><th>No</th><th>Description of Goods</th><th>Quantity</th><th>Unit</th><th>Remarks</th></tr><tr><td>1</td><td>${esc(barang)}</td><td>${num(qty)}</td><td>${esc(unit)}</td><td>${esc(ket)}</td></tr></table>`;
+ }else if(type==='invoice'){
+  body=`<div class="doc-grid"><b>Seller</b><span>:</span><span>${esc(ship)}</span><b>Buyer</b><span>:</span><span>${esc(cons)}</span><b>Loading Port</b><span>:</span><span>${esc(lp)}</span><b>Destination</b><span>:</span><span>${esc(dp)}</span></div><table class="doc-table"><tr><th>Description</th><th>Qty</th><th>Unit Price</th><th>Amount</th></tr><tr><td>${esc(barang)}</td><td>${num(qty)} ${esc(unit)}</td><td>${rp(harga)}</td><td>${rp(total)}</td></tr><tr><td colspan="3"><b>TOTAL</b></td><td><b>${rp(total)}</b></td></tr></table>`;
+ }else if(type==='bl'){
+  body=`<div class="doc-grid"><b>Shipper</b><span>:</span><span>${esc(ship)}</span><b>Consignee</b><span>:</span><span>${esc(cons)}</span><b>Vessel/Tug & Barge</b><span>:</span><span>${esc(tug)} / ${esc(kapal)}</span><b>Port of Loading</b><span>:</span><span>${esc(lp)}</span><b>Port of Discharge</b><span>:</span><span>${esc(dp)}</span><b>Description</b><span>:</span><span>${esc(barang)}</span><b>Quantity</b><span>:</span><span>${num(qty)} ${esc(unit)}</span></div><p><b>Freight:</b> As Agreed</p><p><b>Remarks:</b> ${esc(ket)}</p>`;
+ }else{
+  body=`<p>Pada tanggal <b>${tgl}</b>, telah dilaksanakan kegiatan terkait pengiriman barang dengan rincian:</p><div class="doc-grid"><b>Pengirim/Shipper</b><span>:</span><span>${esc(ship)}</span><b>Penerima/Consignee</b><span>:</span><span>${esc(cons)}</span><b>Kapal/Tongkang</b><span>:</span><span>${esc(kapal)} / ${esc(tug)}</span><b>Lokasi Muat</b><span>:</span><span>${esc(lp)}</span><b>Lokasi Tujuan</b><span>:</span><span>${esc(dp)}</span><b>Jenis Barang</b><span>:</span><span>${esc(barang)}</span><b>Jumlah</b><span>:</span><span>${num(qty)} ${esc(unit)}</span><b>Keterangan</b><span>:</span><span>${esc(ket)}</span></div><p>Dokumen ini dibuat dengan sebenar-benarnya untuk dipergunakan sebagaimana mestinya.</p>`;
+ }
+ docPreview.innerHTML=`<div class="doc-head"><h2>PT KALTIM BUMI UNGGUL</h2><h3>Jl. Yos Sudarso 1, Gg. Bakti Jaya 2 No. 68, Sangatta Utara</h3></div><h2 class="doc-title">${title}</h2><div class="doc-grid"><b>Nomor</b><span>:</span><span>${esc(no)}</span><b>Tanggal</b><span>:</span><span>${tgl}</span></div>${body}<div class="signature"><div><p>PIHAK PENGIRIM</p><div class="signature-space"></div><p><b>PT KALTIM BUMI UNGGUL</b></p></div><div><p>PIHAK PENERIMA</p><div class="signature-space"></div><p><b>${esc(cons)}</b></p></div></div>`;
+}
+
+function backupJSON(){
+ let data=JSON.stringify({project:proyek(),hpp:hpp(),realisasi:real()},null,2),a=document.createElement('a');
+ a.href=URL.createObjectURL(new Blob([data],{type:'application/json'}));a.download='kbu_backup.json';a.click();URL.revokeObjectURL(a.href);
+}
+function restoreJSON(){
+ let f=restoreFile.files[0];if(!f)return alert('Pilih file JSON.');
+ let reader=new FileReader();reader.onload=e=>{try{let d=JSON.parse(e.target.result);if(d.project)set('kbu_project',d.project);if(d.hpp)set('kbu_hpp',d.hpp);if(d.realisasi)set('kbu_realisasi',d.realisasi);render();alert('Data berhasil direstore.')}catch(err){alert('File JSON tidak valid.')}};reader.readAsText(f);
+}
+function resetSemua(){if(confirm('Hapus seluruh data aplikasi?')){localStorage.clear();location.reload()}}
+
+realTanggal.value=new Date().toISOString().slice(0,10);
+docTanggal.value=new Date().toISOString().slice(0,10);
+render();isiDokumenDariProyek();renderDoc();
+</script>
+</body>
+</html>
