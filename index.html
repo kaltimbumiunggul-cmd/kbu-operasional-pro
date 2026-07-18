@@ -1,0 +1,3059 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KBU Operasional Pro V7.8 Premium Dokumen</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#edf4ff;color:#172033;padding-bottom:90px}header{padding:28px 20px 34px;color:#fff;background:linear-gradient(135deg,#073c7a,#1265ed);border-radius:0 0 28px 28px}header h1{margin:0}.badge{display:inline-block;margin-top:8px;padding:8px 14px;border-radius:25px;background:#d9ffe9;color:#12643b;font-weight:700}main{padding:16px}.page{display:none}.page.active{display:block}.card{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:0 6px 20px #15365d15}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{padding:14px 8px;background:#f2f6ff;border-radius:15px;text-align:center}.stat small{display:block;color:#667085;margin-bottom:7px}label{display:block;font-weight:700;margin:13px 0 6px}input,select,textarea{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:12px;font-size:15px;background:#fff}textarea{min-height:75px}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}button{font:inherit}.primary,.success,.danger,.secondary{width:100%;padding:13px;margin-top:12px;border-radius:12px;font-weight:700}.primary{border:0;background:#1265ed;color:#fff}.success{border:0;background:#0f9d58;color:#fff}.danger{border:0;background:#fff0f0;color:#c62828}.secondary{border:1px solid #cbd5e1;background:#fff}.row{padding:13px;border:1px solid #e1e7f0;border-radius:15px;margin-bottom:10px}.head{display:flex;justify-content:space-between;gap:10px}.muted{font-size:13px;color:#667085;line-height:1.5}.money{font-weight:700;color:#1265ed}.small{border:0;background:#fff0f0;color:#c62828;border-radius:8px;padding:7px 9px;margin-top:8px}.green{color:#07883d}.red{color:#d52b2b}.progress{height:14px;background:#e5e7eb;border-radius:99px;overflow:hidden}.bar{height:100%;background:#1265ed}.tabs{display:flex;gap:7px;overflow:auto;margin-bottom:12px}.tabs button{white-space:nowrap;padding:8px 12px;border-radius:99px;border:1px solid #d8dfeb;background:#fff}.tabs button.active{background:#1265ed;color:#fff}.doc{font-family:'Times New Roman';border:1px solid #ddd;padding:25px;min-height:650px}.dochead{text-align:center;border-bottom:3px double #000}.doctitle{text-align:center;text-decoration:underline}.docgrid{display:grid;grid-template-columns:135px 8px 1fr;gap:5px}.sig{display:grid;grid-template-columns:1fr 1fr;gap:50px;text-align:center;margin-top:45px}.space{height:70px}nav{position:fixed;bottom:0;left:0;right:0;display:flex;overflow:auto;background:#fff;padding:8px 5px 14px;box-shadow:0 -4px 16px #0002}nav button{border:0;background:transparent;padding:10px 9px;color:#667085;white-space:nowrap;font-size:11px;border-radius:11px}nav button.active{background:#e7f0ff;color:#1265ed;font-weight:700}
+.attach-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px
+}
+.attach-card{
+border:1px solid #e1e7f0;
+border-radius:15px;
+padding:10px;
+background:#fff
+}
+.attach-card img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:11px;
+background:#eef2f7
+}
+.attach-card .file-icon{
+height:150px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:54px;
+border-radius:11px;
+background:#eef2f7
+}
+@media(min-width:700px){
+.attach-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+
+.modal{display:none;position:fixed;inset:0;background:rgba(15,23,42,.58);z-index:9999;padding:18px;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal-box{width:100%;max-width:520px;max-height:88vh;overflow:auto;background:#fff;border-radius:20px;padding:20px;box-shadow:0 20px 50px #0005}
+.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.modal-close{border:0;background:#eef2f7;border-radius:10px;padding:8px 11px;font-weight:700}
+.detail-grid{display:grid;grid-template-columns:125px 8px 1fr;gap:9px 4px;font-size:14px}
+.clickable{cursor:pointer}.clickable:active{transform:scale(.99)}
+
+
+.premium-doc{
+position:relative;
+overflow:hidden;
+border:1px solid #d7deea;
+border-radius:18px;
+padding:26px;
+background:#fff;
+min-height:900px
+}
+.premium-doc:before{
+content:"KBU";
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:170px;
+font-weight:900;
+color:rgba(18,101,237,.055);
+transform:rotate(-20deg);
+pointer-events:none
+}
+.premium-head{
+position:relative;
+display:grid;
+grid-template-columns:78px 1fr;
+gap:14px;
+align-items:center;
+padding-bottom:14px;
+border-bottom:4px double #1265ed
+}
+.logo-kbu{
+width:70px;
+height:70px;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+font-size:24px;
+color:#fff;
+background:linear-gradient(135deg,#073c7a,#1265ed)
+}
+.premium-head h1{
+font-size:22px;
+margin:0;
+letter-spacing:.5px
+}
+.premium-head p{
+margin:2px 0;
+font-size:12px
+}
+.doc-meta{
+display:grid;
+grid-template-columns:120px 10px 1fr;
+gap:6px 3px;
+font-size:13px;
+margin:18px 0
+}
+.doc-table{
+width:100%;
+border-collapse:collapse;
+font-size:12px;
+position:relative
+}
+.doc-table th,.doc-table td{
+border:1px solid #ccd5e3;
+padding:8px;
+vertical-align:top
+}
+.doc-table th{
+background:#eef4ff;
+text-align:center
+}
+.doc-footer{
+position:relative;
+margin-top:28px;
+padding-top:10px;
+border-top:1px solid #d6dde8;
+font-size:11px;
+display:flex;
+justify-content:space-between;
+gap:10px
+}
+.doc-number{
+display:inline-block;
+padding:5px 10px;
+border-radius:999px;
+background:#eef4ff;
+font-weight:700;
+color:#073c7a
+}
+
+:root{--kbu-logo:url('logo.png')}
+.logo-kbu{
+background:#fff!important;
+padding:4px!important;
+border:1px solid #e5e7eb;
+overflow:hidden;
+}
+.logo-kbu img{
+width:100%;
+height:100%;
+object-fit:contain;
+display:block;
+}
+.premium-doc:before{
+content:""!important;
+background-image:var(--kbu-logo)!important;
+background-repeat:no-repeat!important;
+background-position:center!important;
+background-size:58%!important;
+opacity:.055!important;
+transform:none!important;
+}
+.premium-head{
+grid-template-columns:96px 1fr!important;
+padding-bottom:16px!important;
+}
+.premium-head .logo-kbu{
+width:90px!important;
+height:90px!important;
+border-radius:18px!important;
+}
+.premium-head h1{
+font-size:24px!important;
+color:#0b2d5c!important;
+}
+.doc-footer{
+border-top:2px solid #0b2d5c!important;
+padding-top:12px!important;
+}
+
+
+.premium-head{
+display:grid!important;
+grid-template-columns:145px 1fr!important;
+gap:22px!important;
+align-items:center!important;
+padding:10px 6px 18px!important;
+border-bottom:3px solid #0b5bd3!important
+}
+.logo-kbu{
+width:140px!important;
+height:92px!important;
+padding:0!important;
+border:0!important;
+border-radius:0!important;
+background:transparent url('logo.png') center/contain no-repeat!important;
+font-size:0!important;
+box-shadow:none!important
+}
+.premium-head h1{
+font-size:25px!important;
+line-height:1.15!important;
+color:#0c1d3a!important;
+margin:0 0 7px!important;
+font-weight:800!important
+}
+.premium-head p{
+font-size:12px!important;
+line-height:1.45!important;
+margin:2px 0!important;
+color:#24324a!important
+}
+.premium-doc{
+position:relative!important;
+overflow:hidden!important;
+border:1px solid #dbe3f0!important;
+border-radius:22px!important;
+padding:34px 36px!important;
+background:#fff!important;
+box-shadow:0 12px 30px rgba(17,42,86,.10)!important
+}
+.premium-doc:before{
+content:""!important;
+position:absolute!important;
+inset:22% 10% 14%!important;
+background:url('logo.png') center/72% auto no-repeat!important;
+opacity:.065!important;
+transform:none!important;
+pointer-events:none!important
+}
+.premium-doc>*{position:relative;z-index:1}
+#pdTitle{
+font-size:34px!important;
+letter-spacing:.4px!important;
+color:#0c1d3a!important
+}
+#pdNumberBadge{
+background:transparent!important;
+color:#0b5bd3!important;
+font-size:15px!important;
+padding:4px 0!important
+}
+.doc-meta{
+grid-template-columns:145px 10px 1fr!important;
+gap:8px 5px!important;
+font-size:14px!important;
+margin:22px 0!important
+}
+.doc-table{font-size:13px!important;border-collapse:collapse!important}
+.doc-table th{background:#edf4ff!important;color:#0c1d3a!important;font-weight:700!important}
+.doc-table th,.doc-table td{border:1px solid #7da7eb!important;padding:10px!important}
+.sig{margin-top:34px!important;gap:36px!important}
+.doc-footer{
+border-top:2px solid #0b5bd3!important;
+margin-top:34px!important;
+padding-top:12px!important;
+color:#26354d!important
+}
+@media(max-width:600px){
+.premium-doc{padding:24px 20px!important}
+.premium-head{grid-template-columns:118px 1fr!important;gap:15px!important}
+.logo-kbu{width:114px!important;height:78px!important}
+.premium-head h1{font-size:20px!important}
+.premium-head p{font-size:10.8px!important}
+#pdTitle{font-size:29px!important}
+.doc-meta{grid-template-columns:112px 8px 1fr!important;font-size:13px!important}
+}
+@media print{
+.premium-doc{
+border:0!important;
+box-shadow:none!important;
+border-radius:0!important;
+padding:12mm 14mm!important
+}
+.premium-head{grid-template-columns:42mm 1fr!important;gap:6mm!important}
+.logo-kbu{width:40mm!important;height:27mm!important}
+.premium-head h1{font-size:18pt!important}
+.premium-head p{font-size:8.5pt!important}
+#pdTitle{font-size:22pt!important}
+}
+
+@media print{
+body{background:#fff!important}
+body *{visibility:hidden!important}
+#printArea,#printArea *{visibility:visible!important}
+#printArea{
+position:absolute!important;
+left:0!important;
+top:0!important;
+width:100%!important;
+margin:0!important;
+padding:0!important
+}
+#printArea .premium-doc,
+#printArea .doc{
+box-shadow:none!important;
+border:0!important;
+border-radius:0!important;
+min-height:auto!important;
+padding:12mm!important
+}
+nav,.no-print,header{display:none!important}
+}
+
+@media print{header,nav,.no-print{display:none!important}body{background:#fff;padding:0}main{padding:0}.page{display:none!important}#docs,#contract,#daily,#ritase,#ritpay{display:block!important}.card{box-shadow:none;padding:0}.doc{border:0;padding:10mm}@page{size:A4;margin:10mm}}
+
+/* V7.7 PDF logo fix */
+.logo-kbu{background:none !important;display:flex !important;align-items:center !important;justify-content:center !important;overflow:visible !important;border-radius:0 !important;box-shadow:none !important}
+.logo-kbu-img{display:block !important;width:100% !important;height:100% !important;object-fit:contain !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+.premium-doc,.premium-doc *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+@media print{
+  .logo-kbu{width:40mm !important;height:28mm !important;background:none !important}
+  .logo-kbu-img{width:100% !important;height:100% !important;object-fit:contain !important}
+}
+
+
+/* V7.8 Premium Document Refresh */
+:root{
+  --kbu-premium-logo:url("logo.png");
+}
+.premium-doc{
+  position:relative!important;
+  overflow:hidden!important;
+  border:1px solid #d7dfec!important;
+  border-radius:24px!important;
+  padding:34px 36px 30px!important;
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%)!important;
+  box-shadow:0 18px 40px rgba(15,43,86,.10)!important;
+  min-height:920px!important;
+}
+.premium-doc:before{
+  content:""!important;
+  position:absolute!important;
+  inset:auto 50% 135px auto!important;
+  width:320px!important;
+  height:320px!important;
+  transform:translateX(50%)!important;
+  background:var(--kbu-premium-logo) center/contain no-repeat!important;
+  opacity:.08!important;
+  pointer-events:none!important;
+}
+.premium-head{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:122px 1fr!important;
+  gap:18px!important;
+  align-items:center!important;
+  padding:0 0 18px!important;
+  border-bottom:4px double #1d67d1!important;
+}
+.logo-shell{
+  width:118px!important;
+  height:118px!important;
+  padding:10px!important;
+  border-radius:22px!important;
+  background:#ffffff!important;
+  border:1px solid #e7edf7!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  box-shadow:0 12px 28px rgba(18,41,76,.08)!important;
+}
+.logo-kbu{
+  width:100%!important;
+  height:100%!important;
+  background:none!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:visible!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.logo-kbu-img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  -webkit-print-color-adjust:exact!important;
+  print-color-adjust:exact!important;
+}
+.premium-brand h1,
+.premium-head h1{
+  margin:0 0 8px!important;
+  font-size:23px!important;
+  line-height:1.15!important;
+  letter-spacing:.4px!important;
+  color:#10213f!important;
+  font-weight:800!important;
+}
+.premium-brand p,
+.premium-head p{
+  margin:3px 0!important;
+  font-size:12.5px!important;
+  line-height:1.45!important;
+  color:#2a3950!important;
+}
+.premium-title-wrap{
+  position:relative!important;
+  text-align:center!important;
+  margin:24px 0 20px!important;
+}
+#pdTitle{
+  margin:0 0 10px!important;
+  font-size:40px!important;
+  line-height:1.05!important;
+  letter-spacing:.6px!important;
+  color:#10213f!important;
+  font-weight:800!important;
+  text-transform:uppercase!important;
+}
+.doc-number{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:42px!important;
+  padding:9px 18px!important;
+  border-radius:999px!important;
+  background:#eff5ff!important;
+  border:1px solid #d6e4ff!important;
+  color:#165ec7!important;
+  font-weight:800!important;
+  font-size:13px!important;
+}
+.doc-meta{
+  display:grid!important;
+  grid-template-columns:140px 12px 1fr!important;
+  gap:8px 6px!important;
+  margin:22px 0 20px!important;
+  font-size:14px!important;
+  color:#22324a!important;
+}
+.doc-meta div:nth-child(3n+1){font-weight:700!important;color:#16253d!important}
+.doc-table{
+  width:100%!important;
+  border-collapse:collapse!important;
+  font-size:13px!important;
+  position:relative!important;
+  background:#fff!important;
+}
+.doc-table th,.doc-table td{
+  border:1px solid #86aee8!important;
+  padding:10px 11px!important;
+  vertical-align:top!important;
+}
+.doc-table th{
+  background:#eef4ff!important;
+  color:#10213f!important;
+  text-align:center!important;
+  font-weight:800!important;
+}
+.doc-table td{color:#253550!important}
+.tar{text-align:right!important}
+.tac{text-align:center!important}
+.amount-box{
+  margin-top:18px!important;
+  padding:14px 16px!important;
+  border:1px solid #d7e4fb!important;
+  border-radius:16px!important;
+  background:#f8fbff!important;
+}
+.amount-box p{margin:6px 0!important}
+.doc-note{
+  margin-top:16px!important;
+  line-height:1.7!important;
+  color:#253550!important;
+}
+.sig{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:42px!important;
+  text-align:center!important;
+  margin-top:34px!important;
+}
+.sig .sig-role{font-weight:700!important;color:#1a2944!important;margin-bottom:72px!important}
+.signature-line{
+  width:70%!important;
+  margin:0 auto 8px!important;
+  border-top:1.8px solid #253550!important;
+  height:1px!important;
+}
+.sig .sig-name{
+  font-weight:800!important;
+  color:#10213f!important;
+}
+.sig .sig-sub{font-size:12px!important;color:#526278!important}
+.doc-footer{
+  position:relative!important;
+  margin-top:34px!important;
+  padding-top:12px!important;
+  border-top:2px solid #1d67d1!important;
+  display:flex!important;
+  justify-content:space-between!important;
+  gap:10px!important;
+  font-size:11.5px!important;
+  color:#33445d!important;
+}
+@media(max-width:600px){
+  .premium-doc{padding:24px 18px 24px!important;border-radius:18px!important}
+  .premium-doc:before{width:250px!important;height:250px!important;bottom:160px!important}
+  .premium-head{grid-template-columns:100px 1fr!important;gap:14px!important}
+  .logo-shell{width:96px!important;height:96px!important;padding:8px!important;border-radius:18px!important}
+  .premium-brand h1,.premium-head h1{font-size:20px!important}
+  .premium-brand p,.premium-head p{font-size:11px!important}
+  #pdTitle{font-size:28px!important}
+  .doc-meta{grid-template-columns:108px 8px 1fr!important;font-size:13px!important}
+  .doc-table{font-size:12px!important}
+  .sig{gap:24px!important}
+}
+@media print{
+  @page{size:A4;margin:10mm}
+  .premium-doc{
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    padding:10mm 12mm 8mm!important;
+    min-height:auto!important;
+  }
+  .premium-doc:before{width:95mm!important;height:95mm!important;bottom:55mm!important;opacity:.07!important}
+  .premium-head{grid-template-columns:34mm 1fr!important;gap:5mm!important;padding-bottom:5mm!important}
+  .logo-shell{width:31mm!important;height:31mm!important;padding:2mm!important;border-radius:6mm!important;box-shadow:none!important}
+  .premium-brand h1,.premium-head h1{font-size:18pt!important}
+  .premium-brand p,.premium-head p{font-size:8.8pt!important}
+  #pdTitle{font-size:24pt!important;margin-bottom:3mm!important}
+  .doc-number{font-size:10pt!important;min-height:auto!important;padding:2.5mm 5mm!important}
+  .doc-meta{grid-template-columns:36mm 4mm 1fr!important;gap:2.5mm 2mm!important;font-size:10pt!important;margin:5mm 0 4mm!important}
+  .doc-table{font-size:9.5pt!important}
+  .doc-table th,.doc-table td{padding:2.2mm!important}
+  .amount-box{padding:3.5mm 4mm!important}
+  .sig{margin-top:8mm!important;gap:10mm!important}
+  .sig .sig-role{margin-bottom:16mm!important}
+  .doc-footer{margin-top:8mm!important;padding-top:3mm!important;font-size:8.4pt!important}
+}
+</style></head><body>
+<header><h1>KBU Operasional Pro</h1><p>PT KALTIM BUMI UNGGUL</p><span class="badge">V7.7 • Logo PDF Fix & Dokumen Premium Rapi</span></header><main>
+<section id="dash" class="page active"><div class="card"><h2>Dashboard Direktur</h2><p class="muted">Ketuk setiap kartu untuk melihat rincian.</p><div class="grid">
+<div class="stat clickable" onclick="showDashboardDetail('contract')"><small>Nilai Kontrak</small><b id="dKontrak">Rp0</b></div><div class="stat clickable" onclick="showDashboardDetail('target')"><small>Target</small><b id="dTarget">0 Ton</b></div><div class="stat clickable" onclick="showDashboardDetail('tonnage')"><small>Tonase Aktual</small><b id="dTon">0 Ton</b></div><div class="stat clickable" onclick="showDashboardDetail('progress')"><small>Progress</small><b id="dProg">0%</b></div><div class="stat clickable" onclick="showDashboardDetail('budget')"><small>Budget</small><b id="dBudget">Rp0</b></div><div class="stat clickable" onclick="showDashboardDetail('actual')"><small>Realisasi</small><b id="dActual">Rp0</b></div><div class="stat clickable" onclick="showDashboardDetail('cash')"><small>Saldo Kas</small><b id="dSaldo">Rp0</b></div><div class="stat clickable" onclick="showDashboardDetail('profit')"><small>Profit Aktual</small><b id="dProfit">Rp0</b></div></div></div><div class="card"><h2>Progress Loading</h2><div class="progress"><div id="bar" class="bar"></div></div><p id="progText">0% dari target</p></div><div class="card"><h2>Shipment Aktif</h2><div id="activeShip">Belum ada shipment aktif.</div></div></section>
+
+<section id="master" class="page"><div class="card"><h2>Master Data</h2><div class="tabs"><button class="active" onclick="setMT('buyer',this)">Buyer</button><button onclick="setMT('supplier',this)">Supplier</button><button onclick="setMT('kapal',this)">Kapal</button><button onclick="setMT('pelabuhan',this)">Pelabuhan</button><button onclick="setMT('pbm',this)">PBM</button></div><label>Nama</label><input id="mName"><label>Keterangan</label><textarea id="mNote"></textarea><button class="primary" onclick="addMaster()">Tambah</button></div><div class="card"><h2>Daftar Master</h2><div id="mList"></div></div></section>
+
+<section id="ship" class="page"><div class="card"><h2>Data Shipment</h2><label>Nomor Shipment</label><input id="sNo"><label>Nama Proyek</label><input id="sName"><label>Buyer</label><select id="sBuyer"></select><label>Supplier</label><select id="sSupplier"></select><div class="two"><div><label>Target Tonase</label><input id="sTarget" type="number"></div><div><label>Harga Jual/Ton</label><input id="sPrice" type="number"></div></div><div class="two"><div><label>Pelabuhan Muat</label><select id="sLoad"></select></div><div><label>Pelabuhan Bongkar</label><select id="sDis"></select></div></div><div class="two"><div><label>Tugboat</label><select id="sTug"></select></div><div><label>Tongkang</label><select id="sBarge"></select></div></div><label>Status</label><select id="sStatus"><option>Persiapan</option><option>Loading</option><option>Berlayar</option><option>Bongkar</option><option>Selesai</option></select><button class="primary" onclick="addShip()">Simpan Shipment</button></div><div class="card"><h2>Daftar Shipment</h2><div id="shipList"></div></div></section>
+
+<section id="hpp" class="page"><div class="card"><h2>Budget HPP</h2><label>Komponen</label><input id="hName"><label>Jenis</label><select id="hType"><option>Per Ton</option><option>Per Rit</option><option>Per Jam</option><option>Per Hari</option><option>Per Unit</option><option>Lumpsum</option></select><div class="two"><div><label>Qty</label><input id="hQty" type="number"></div><div><label>Harga</label><input id="hPrice" type="number"></div></div><button class="primary" onclick="addHpp()">Tambah Budget</button></div><div class="card"><h2>Daftar Budget</h2><div id="hList"></div></div></section>
+
+<section id="loading" class="page"><div class="card"><h2>Loading Harian</h2><label>Tanggal</label><input id="lDate" type="date"><div class="two"><div><label>Ritase</label><input id="lRit" type="number"></div><div><label>Tonase</label><input id="lTon" type="number" step="0.01"></div></div><div class="two"><div><label>Mulai</label><input id="lStart" type="time"></div><div><label>Selesai</label><input id="lEnd" type="time"></div></div><label>Keterangan</label><textarea id="lNote"></textarea><button class="primary" onclick="addLoad()">Simpan Loading</button></div><div class="card"><h2>Riwayat Loading</h2><div id="lList"></div></div></section>
+
+
+<section id="ops" class="page"><div class="card"><h2>Operasional Alat & Lapangan</h2><label>Tanggal</label><input id="oDate" type="date"><label>Nama Alat / Kegiatan</label><input id="oName" placeholder="Excavator, Loader, Crane, Buruh, Solar"><div class="two"><div><label>HM Awal</label><input id="oHm1" type="number" step="0.1" oninput="calcOpsHm()"></div><div><label>HM Akhir</label><input id="oHm2" type="number" step="0.1" oninput="calcOpsHm()"></div></div><div class="two"><div><label>Harga HM / Jam</label><input id="oHmRate" type="number" oninput="calcOpsHm()" placeholder="Contoh: 1000000"></div><div><label>Biaya HM Otomatis</label><input id="oHmCost" type="number" readonly></div></div><div class="two"><div><label>Solar (Liter)</label><input id="oSolar" type="number" step="0.1"></div><div><label>Jumlah Buruh</label><input id="oLabor" type="number"></div></div><div class="two"><div><label>Biaya Solar</label><input id="oSolarCost" type="number"></div><div><label>Biaya Buruh</label><input id="oLaborCost" type="number"></div></div><label>Biaya Lain</label><input id="oOther" type="number"><label>Keterangan</label><textarea id="oNote"></textarea><button class="primary" onclick="addOps()">Simpan Operasional</button></div><div class="card"><h2>Rekap Operasional</h2><div class="grid"><div class="stat"><small>Total HM</small><b id="oTotalHm">0 Jam</b></div><div class="stat"><small>Total Solar</small><b id="oTotalSolar">0 Liter</b></div><div class="stat"><small>Total Buruh</small><b id="oTotalLabor">0 Orang</b></div><div class="stat"><small>Total Biaya</small><b id="oTotalCost">Rp0</b></div></div></div><div class="card"><h2>Riwayat Operasional</h2><div id="oList"></div></div></section>
+<section id="actual" class="page"><div class="card"><h2>Realisasi Biaya</h2><label>Tanggal</label><input id="aDate" type="date"><label>Komponen</label><select id="aHpp"></select><label>Supplier/Penerima</label><input id="aSupplier"><div class="two"><div><label>Qty</label><input id="aQty" type="number"></div><div><label>Harga Aktual</label><input id="aPrice" type="number"></div></div><label>Status</label><select id="aStatus"><option>Belum Bayar</option><option>DP</option><option>Lunas</option></select><button class="primary" onclick="addActual()">Simpan Realisasi</button></div><div class="card"><h2>Riwayat Realisasi</h2><div id="aList"></div></div></section>
+
+<section id="cash" class="page"><div class="card"><h2>Jurnal Keuangan</h2><label>Tanggal</label><input id="cDate" type="date"><label>Jenis</label><select id="cType"><option value="masuk">Kas Masuk</option><option value="keluar">Kas Keluar</option><option value="piutang">Piutang</option><option value="hutang">Hutang</option></select><label>Kategori</label><input id="cCat"><label>Nilai</label><input id="cAmt" type="number"><label>Keterangan</label><textarea id="cNote"></textarea><button class="primary" onclick="addCash()">Simpan Transaksi</button></div><div class="card"><h2>Daftar Transaksi</h2><div id="cList"></div></div></section>
+
+
+
+
+
+
+<section id="ritase" class="page">
+<div class="card">
+<h2>Jurnal Ritase</h2>
+<p class="muted">Input ritase satu per satu, lengkap dengan harga per rit, tonase, dan surat jalan.</p>
+
+<div class="two">
+<div>
+<label>Tanggal</label>
+<input id="rDate" type="date">
+</div>
+<div>
+<label>Nomor Surat Jalan</label>
+<input id="rNo" placeholder="Contoh: SJ/KBU/001/VII/2026">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Nomor Polisi</label>
+<input id="rPlate" placeholder="KT 0000 XX">
+</div>
+<div>
+<label>Nama Sopir</label>
+<input id="rDriver" placeholder="Nama sopir">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Jumlah Rit</label>
+<input id="rCount" type="number" min="1" value="1" oninput="calcRitase()">
+</div>
+<div>
+<label>Harga per Rit</label>
+<input id="rRate" type="number" oninput="calcRitase()" placeholder="Contoh: 70000">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Tonase per Rit</label>
+<input id="rTonPer" type="number" step="0.01" oninput="calcRitase()" placeholder="Contoh: 2">
+</div>
+<div>
+<label>Total Tonase</label>
+<input id="rTotalTon" type="number" readonly>
+</div>
+</div>
+
+<label>Total Nilai Ritase</label>
+<input id="rTotal" type="number" readonly>
+
+<label>Asal Muat</label>
+<input id="rOrigin" placeholder="Contoh: Stockpile Maloy">
+
+<label>Tujuan</label>
+<input id="rDestination" placeholder="Contoh: Pelabuhan Maloy / Tongkang">
+
+<label>Jenis Muatan</label>
+<input id="rCargo" value="Ban Bekas Kondisi Alami">
+
+<label>Keterangan</label>
+<textarea id="rNote"></textarea>
+
+<button class="primary" onclick="addRitase()">Simpan Ritase</button>
+</div>
+
+<div class="card">
+<h2>Ringkasan Ritase Shipment Aktif</h2>
+<div class="grid">
+<div class="stat"><small>Total Entri</small><b id="rEntries">0</b></div>
+<div class="stat"><small>Total Rit</small><b id="rTotalCount">0 Rit</b></div>
+<div class="stat"><small>Total Tonase</small><b id="rSummaryTon">0 Ton</b></div>
+<div class="stat"><small>Total Biaya Ritase</small><b id="rSummaryCost">Rp0</b></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Daftar Ritase</h2>
+<div id="ritaseList"></div>
+</div>
+
+<div class="card no-print">
+<h2>Preview Surat Jalan</h2>
+<label>Pilih Ritase</label>
+<select id="ritasePrintSelect"></select>
+<button class="secondary" onclick="previewRitase()">Tampilkan Surat Jalan</button>
+<button class="primary" onclick="preparePremiumPrint()">Cetak / Simpan PDF</button>
+</div>
+
+<div class="card">
+<div id="ritasePreview" class="doc">
+<div class="dochead">
+<h2>PT KALTIM BUMI UNGGUL</h2>
+<p>Jl. Yos Sudarso 1, Gg. Bakti Jaya 2 No. 68</p>
+<p>Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur</p>
+</div>
+<br>
+<h2 class="doctitle">SURAT JALAN</h2>
+<div id="ritasePreviewBody">
+<p class="muted">Pilih data ritase untuk menampilkan surat jalan.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="ritpay" class="page">
+<div class="card">
+<h2>Rekap Ritase & Pembayaran Sopir</h2>
+<p class="muted">Kelola pembayaran rit normal, rit lembur, pembayaran sebagian, dan pelunasan per sopir.</p>
+
+<div class="two">
+<div>
+<label>Tanggal Pembayaran</label>
+<input id="rpDate" type="date">
+</div>
+<div>
+<label>Pilih Sopir</label>
+<select id="rpDriver"></select>
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Tarif Rit Normal</label>
+<input id="rpRateNormal" type="number" placeholder="Contoh: 70000" oninput="calcRitPayment()">
+</div>
+<div>
+<label>Tarif Rit Lembur</label>
+<input id="rpRateOvertime" type="number" placeholder="Contoh: 100000" oninput="calcRitPayment()">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Jumlah Rit Normal</label>
+<input id="rpNormalCount" type="number" min="0" oninput="calcRitPayment()">
+</div>
+<div>
+<label>Jumlah Rit Lembur</label>
+<input id="rpOvertimeCount" type="number" min="0" oninput="calcRitPayment()">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Total Tagihan</label>
+<input id="rpBill" type="number" readonly>
+</div>
+<div>
+<label>Dibayar Sekarang</label>
+<input id="rpPaidNow" type="number" oninput="calcRitPayment()">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Sisa Pembayaran</label>
+<input id="rpRemain" type="number" readonly>
+</div>
+<div>
+<label>Status</label>
+<input id="rpStatus" readonly>
+</div>
+</div>
+
+<label>Keterangan</label>
+<textarea id="rpNote" placeholder="Contoh: Pembayaran ritase hari kedua dan lembur"></textarea>
+
+<button class="primary" onclick="addRitPayment()">Simpan Pembayaran</button>
+</div>
+
+<div class="card">
+<h2>Ringkasan Pembayaran</h2>
+<div class="grid">
+<div class="stat"><small>Total Tagihan</small><b id="rpTotalBill">Rp0</b></div>
+<div class="stat"><small>Total Dibayar</small><b id="rpTotalPaid">Rp0</b></div>
+<div class="stat"><small>Sisa Belum Dibayar</small><b id="rpTotalRemain">Rp0</b></div>
+<div class="stat"><small>Sopir Terdata</small><b id="rpDriverCount">0</b></div>
+<div class="stat"><small>Rit Normal</small><b id="rpTotalNormal">0 Rit</b></div>
+<div class="stat"><small>Rit Lembur</small><b id="rpTotalOvertime">0 Rit</b></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Rekap per Sopir</h2>
+<div id="ritPaySummary"></div>
+</div>
+
+<div class="card">
+<h2>Riwayat Pembayaran</h2>
+<div id="ritPayList"></div>
+</div>
+
+<div class="card no-print">
+<h2>Preview Pertanggungjawaban Ritase</h2>
+<label>Pilih Pembayaran</label>
+<select id="ritPayPrintSelect"></select>
+<button class="secondary" onclick="previewRitPayment()">Tampilkan Preview</button>
+<button class="primary" onclick="window.print()">Cetak / Simpan PDF</button>
+</div>
+
+<div class="card">
+<div id="ritPayPreview" class="doc">
+<div class="dochead">
+<h2>PT KALTIM BUMI UNGGUL</h2>
+<p>PERTANGGUNGJAWABAN PEMBAYARAN RITASE</p>
+</div>
+<br>
+<div id="ritPayPreviewBody">
+<p class="muted">Pilih data pembayaran untuk ditampilkan.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="attachments" class="page">
+<div class="card">
+<h2>Lampiran Bukti & Dokumentasi</h2>
+<p class="muted">Foto dikompres otomatis agar penyimpanan HP tetap ringan. Data terhubung dengan shipment aktif.</p>
+
+<div class="two">
+<div>
+<label>Tanggal</label>
+<input id="atDate" type="date">
+</div>
+<div>
+<label>Kategori</label>
+<select id="atCategory">
+<option>Foto HM Awal</option>
+<option>Foto HM Akhir</option>
+<option>Foto Loading</option>
+<option>Foto Bongkar</option>
+<option>Nota Pembelian</option>
+<option>Bukti Transfer</option>
+<option>Surat Jalan</option>
+<option>Dokumen Kapal</option>
+<option>Dokumen PBM</option>
+<option>Lain-lain</option>
+</select>
+</div>
+</div>
+
+<label>Judul Lampiran</label>
+<input id="atTitle" placeholder="Contoh: HM Awal Excavator Komatsu">
+
+<label>Nominal Terkait (opsional)</label>
+<input id="atAmount" type="number">
+
+<label>Keterangan</label>
+<textarea id="atNote"></textarea>
+
+<label>Pilih Foto / Dokumen</label>
+<input id="atFile" type="file" accept="image/*,.pdf">
+
+<div id="atPreviewBox" class="row">
+<p class="muted">Belum ada file dipilih.</p>
+</div>
+
+<button class="primary" onclick="saveAttachment()">Simpan Lampiran</button>
+</div>
+
+<div class="card">
+<h2>Ringkasan Lampiran</h2>
+<div class="grid">
+<div class="stat"><small>Total Lampiran</small><b id="atCount">0</b></div>
+<div class="stat"><small>Total Nominal Bukti</small><b id="atTotalAmount">Rp0</b></div>
+<div class="stat"><small>Foto Lapangan</small><b id="atPhotoCount">0</b></div>
+<div class="stat"><small>Nota / Transfer</small><b id="atProofCount">0</b></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Daftar Lampiran</h2>
+<div id="attachmentList" class="attach-grid"></div>
+</div>
+
+<div class="card no-print">
+<h2>Catatan Penyimpanan</h2>
+<p class="muted">
+Aplikasi saat ini menyimpan data di browser HP. Hindari menyimpan terlalu banyak foto resolusi tinggi.
+Gunakan menu Backup secara berkala agar data dan lampiran tidak hilang.
+</p>
+</div>
+</section>
+
+<section id="daily" class="page">
+<div class="card">
+<h2>Laporan Harian Lapangan</h2>
+<p class="muted">Catat kegiatan harian berdasarkan shipment aktif.</p>
+
+<div class="two">
+<div>
+<label>Tanggal</label>
+<input id="dDate" type="date">
+</div>
+<div>
+<label>Shift</label>
+<select id="dShift">
+<option>Shift Pagi</option>
+<option>Shift Siang</option>
+<option>Shift Malam</option>
+<option>Full Day</option>
+</select>
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Jam Mulai</label>
+<input id="dStart" type="time">
+</div>
+<div>
+<label>Jam Selesai</label>
+<input id="dEnd" type="time">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Ritase</label>
+<input id="dRit" type="number">
+</div>
+<div>
+<label>Tonase</label>
+<input id="dTon" type="number" step="0.01">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>HM Alat</label>
+<input id="dHm" type="number" step="0.1">
+</div>
+<div>
+<label>Solar (Liter)</label>
+<input id="dSolar" type="number" step="0.1">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Jumlah Buruh</label>
+<input id="dLabor" type="number">
+</div>
+<div>
+<label>Cuaca</label>
+<select id="dWeather">
+<option>Cerah</option>
+<option>Berawan</option>
+<option>Hujan Ringan</option>
+<option>Hujan Lebat</option>
+<option>Angin Kencang</option>
+</select>
+</div>
+</div>
+
+<label>Uraian Kegiatan</label>
+<textarea id="dActivity" placeholder="Kegiatan loading, penumpukan, bongkar, mobilisasi, dan lainnya"></textarea>
+
+<label>Kendala</label>
+<textarea id="dProblem" placeholder="Kendala alat, cuaca, pelabuhan, tenaga kerja, dan lainnya"></textarea>
+
+<label>Tindakan / Solusi</label>
+<textarea id="dAction"></textarea>
+
+<label>Rencana Hari Berikutnya</label>
+<textarea id="dNext"></textarea>
+
+<label>Nama Pengawas</label>
+<input id="dSupervisor" placeholder="Nama pengawas lapangan">
+
+<button class="primary" onclick="addDaily()">Simpan Laporan Harian</button>
+</div>
+
+<div class="card">
+<h2>Ringkasan Harian Shipment Aktif</h2>
+<div class="grid">
+<div class="stat"><small>Total Hari Kerja</small><b id="dDays">0 Hari</b></div>
+<div class="stat"><small>Total Ritase</small><b id="dTotalRit">0 Rit</b></div>
+<div class="stat"><small>Total Tonase</small><b id="dTotalTon">0 Ton</b></div>
+<div class="stat"><small>Rata-rata Tonase/Hari</small><b id="dAvgTon">0 Ton</b></div>
+<div class="stat"><small>Total HM</small><b id="dTotalHm">0 Jam</b></div>
+<div class="stat"><small>Total Solar</small><b id="dTotalSolar">0 Liter</b></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Riwayat Laporan Harian</h2>
+<div id="dailyList"></div>
+</div>
+
+<div class="card no-print">
+<h2>Cetak Laporan Harian</h2>
+<label>Pilih Tanggal</label>
+<select id="dailyPrintSelect"></select>
+<button class="secondary" onclick="previewDaily()">Tampilkan Laporan</button>
+<button class="primary" onclick="window.print()">Cetak / Simpan PDF</button>
+</div>
+
+<div class="card">
+<div id="dailyPreview" class="doc">
+<div class="dochead">
+<h2>PT KALTIM BUMI UNGGUL</h2>
+<p>LAPORAN HARIAN OPERASIONAL</p>
+</div>
+<br>
+<div id="dailyPreviewBody">
+<p class="muted">Pilih laporan harian untuk ditampilkan.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="profit" class="page">
+<div class="card">
+<h2>Analisis Laba Rugi Shipment</h2>
+<p class="muted">Perhitungan otomatis berdasarkan shipment aktif, budget HPP, realisasi biaya, dan tonase aktual.</p>
+
+<div class="grid">
+<div class="stat"><small>Nilai Kontrak</small><b id="pContract">Rp0</b></div>
+<div class="stat"><small>Tonase Target</small><b id="pTarget">0 Ton</b></div>
+<div class="stat"><small>Tonase Aktual</small><b id="pActualTon">0 Ton</b></div>
+<div class="stat"><small>Harga Jual / Ton</small><b id="pSellRate">Rp0</b></div>
+<div class="stat"><small>Total Budget</small><b id="pBudget">Rp0</b></div>
+<div class="stat"><small>Total Realisasi</small><b id="pActualCost">Rp0</b></div>
+<div class="stat"><small>Profit Aktual</small><b id="pProfit">Rp0</b></div>
+<div class="stat"><small>Margin</small><b id="pMargin">0%</b></div>
+<div class="stat"><small>HPP Aktual / Ton</small><b id="pHppTon">Rp0</b></div>
+<div class="stat"><small>Profit / Ton</small><b id="pProfitTon">Rp0</b></div>
+<div class="stat"><small>Selisih Budget</small><b id="pVariance">Rp0</b></div>
+<div class="stat"><small>Progress Tonase</small><b id="pProgress">0%</b></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Proyeksi Sampai Target</h2>
+<div class="grid">
+<div class="stat"><small>Estimasi Pendapatan</small><b id="pProjectedRevenue">Rp0</b></div>
+<div class="stat"><small>Estimasi Total Biaya</small><b id="pProjectedCost">Rp0</b></div>
+<div class="stat"><small>Estimasi Profit</small><b id="pProjectedProfit">Rp0</b></div>
+<div class="stat"><small>Estimasi Margin</small><b id="pProjectedMargin">0%</b></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Status Kontrol Biaya</h2>
+<div id="profitStatus" class="row"></div>
+</div>
+</section>
+
+<section id="billing" class="page">
+<div class="card">
+<h2>Termin Kontrak</h2>
+<p class="muted">Catat jadwal pembayaran dari buyer, tongkang, PBM, dan vendor lainnya.</p>
+
+<label>Jenis Kewajiban</label>
+<select id="bKind">
+<option value="piutang">Piutang Buyer</option>
+<option value="utang">Utang Vendor</option>
+</select>
+
+<div class="two">
+<div>
+<label>Nomor / Nama Termin</label>
+<input id="bName" placeholder="DP 50%, Termin Loading, Pelunasan">
+</div>
+<div>
+<label>Jatuh Tempo</label>
+<input id="bDue" type="date">
+</div>
+</div>
+
+<label>Pihak Terkait</label>
+<input id="bParty" placeholder="Buyer, pemilik tongkang, PBM, supplier">
+
+<div class="two">
+<div>
+<label>Nilai Termin</label>
+<input id="bAmount" type="number">
+</div>
+<div>
+<label>Sudah Dibayar</label>
+<input id="bPaid" type="number">
+</div>
+</div>
+
+<label>Status</label>
+<select id="bStatus">
+<option>Belum Jatuh Tempo</option>
+<option>Jatuh Tempo</option>
+<option>Dibayar Sebagian</option>
+<option>Lunas</option>
+</select>
+
+<label>Keterangan</label>
+<textarea id="bNote"></textarea>
+
+<button class="primary" onclick="addBilling()">Simpan Termin</button>
+</div>
+
+<div class="card">
+<h2>Ringkasan Piutang & Utang</h2>
+<div class="grid">
+<div class="stat"><small>Total Piutang</small><b id="bReceivable">Rp0</b></div>
+<div class="stat"><small>Piutang Terbayar</small><b id="bReceivablePaid">Rp0</b></div>
+<div class="stat"><small>Total Utang</small><b id="bPayable">Rp0</b></div>
+<div class="stat"><small>Utang Terbayar</small><b id="bPayablePaid">Rp0</b></div>
+<div class="stat"><small>Sisa Piutang</small><b id="bReceivableRemain">Rp0</b></div>
+<div class="stat"><small>Sisa Utang</small><b id="bPayableRemain">Rp0</b></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Daftar Termin</h2>
+<div id="billingList"></div>
+</div>
+</section>
+
+
+<section id="docs" class="page">
+<div class="card no-print">
+<h2>Generator Dokumen Premium</h2><p class="muted">Semua dokumen dan laporan akhir memakai logo resmi KBU pada kop dan watermark.</p>
+<p class="muted">Pilih jenis dokumen, isi data, lalu tampilkan preview dan simpan sebagai PDF.</p>
+
+<label>Jenis Dokumen</label>
+<select id="pdType">
+<option>Invoice</option>
+<option>Packing List</option>
+<option>Surat Jalan</option>
+<option>Manifest</option>
+<option>Berita Acara Muat</option>
+<option>Berita Acara Bongkar</option>
+<option>BAST</option>
+<option>SKAB</option>
+<option>Surat Penunjukan PBM</option>
+</select>
+
+<div class="two">
+<div>
+<label>Nomor Dokumen</label>
+<input id="pdNo" placeholder="Otomatis bila dikosongkan">
+</div>
+<div>
+<label>Tanggal</label>
+<input id="pdDate" type="date">
+</div>
+</div>
+
+<label>Kepada / Consignee / Pihak Kedua</label>
+<input id="pdParty" placeholder="Nama perusahaan atau pihak terkait">
+
+<div class="two">
+<div>
+<label>Asal</label>
+<input id="pdOrigin" placeholder="Contoh: Pelabuhan Maloy">
+</div>
+<div>
+<label>Tujuan</label>
+<input id="pdDestination" placeholder="Contoh: Pelabuhan Kendal">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Tugboat</label>
+<input id="pdTugboat" placeholder="Contoh: TB Monang">
+</div>
+<div>
+<label>Tongkang</label>
+<input id="pdBarge" placeholder="Nama tongkang">
+</div>
+</div>
+
+<div class="two">
+<div>
+<label>Jumlah / Tonase</label>
+<input id="pdQty" type="number" step="0.01">
+</div>
+<div>
+<label>Harga per Ton</label>
+<input id="pdRate" type="number">
+</div>
+</div>
+
+<label>Uraian Barang / Pekerjaan</label>
+<input id="pdItem" value="Ban Bekas Kondisi Alami">
+
+<label>Keterangan</label>
+<textarea id="pdNote"></textarea>
+
+<button class="secondary" onclick="autoFillPremiumDoc()">Isi dari Shipment Aktif</button>
+<button class="primary" onclick="renderPremiumDoc()">Tampilkan Preview</button>
+<button class="primary" onclick="window.print()">Cetak / Simpan PDF</button>
+</div>
+
+<div class="card">
+<div id="printArea"><div id="premiumDoc" class="premium-doc">
+<div class="premium-head">
+<div class="logo-kbu"><img class="logo-kbu-img" src="logo.png" alt="Logo KBU"></div>
+<div>
+<h1>PT KALTIM BUMI UNGGUL</h1>
+<p>Jl. Yos Sudarso 1, Gg. Bakti Jaya 2 No. 68</p>
+<p>Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur</p>
+<p>Telp. 0852-4611-2611</p>
+</div>
+</div>
+
+<div style="text-align:center;margin:20px 0">
+<h2 id="pdTitle" style="margin:0">DOKUMEN</h2>
+<div id="pdNumberBadge" class="doc-number">Nomor: -</div>
+</div>
+
+<div id="pdBody">
+<p class="muted">Isi data lalu tekan “Tampilkan Preview”.</p>
+</div>
+
+<div class="doc-footer">
+<div>PT Kaltim Bumi Unggul</div>
+<div>Dokumen dibuat melalui KBU Operasional Pro</div>
+</div>
+</div></div>
+</div>
+
+<div class="card no-print">
+<h2>Laporan Akhir Shipment</h2>
+<p class="muted">Gabungkan seluruh data input menjadi satu laporan lengkap untuk direksi atau pertanggungjawaban proyek.</p>
+<button class="secondary" onclick="buildFinalReport()">Tampilkan Laporan Akhir</button>
+<button class="primary" onclick="printCurrentArea()">Cetak / Simpan PDF Laporan Akhir</button>
+</div>
+
+<div class="card">
+<div id="finalReportHost"></div>
+</div>
+</section>
+
+
+
+<section id="contract" class="page">
+<div class="card">
+<h2>Manajemen Kontrak</h2>
+<p class="muted">Setiap kontrak disimpan terpisah dan terhubung dengan shipment aktif.</p>
+
+<div class="tabs">
+<button class="active" onclick="setContractType('sale',this)">Jual Beli Ban</button>
+<button onclick="setContractType('barge',this)">Tongkang</button>
+<button onclick="setContractType('pbm',this)">PBM ke Pabrik</button>
+</div>
+
+<input id="ctType" type="hidden" value="sale">
+
+<div class="two">
+<div>
+<label>Nomor Kontrak</label>
+<input id="ctNo" placeholder="Contoh: 001/KBU/VII/2026">
+</div>
+<div>
+<label>Tanggal Kontrak</label>
+<input id="ctDate" type="date">
+</div>
+</div>
+
+<label id="ctPartyLabel">Buyer / Pihak Kedua</label>
+<input id="ctParty" placeholder="Nama perusahaan atau pihak kedua">
+
+<label id="ctObjectLabel">Objek Kontrak</label>
+<input id="ctObject" placeholder="Ban bekas / rute pelayaran / pekerjaan PBM">
+
+<div class="two">
+<div>
+<label id="ctQtyLabel">Tonase</label>
+<input id="ctQty" type="number" step="0.01">
+</div>
+<div>
+<label id="ctRateLabel">Harga per Ton</label>
+<input id="ctRate" type="number">
+</div>
+</div>
+
+<label>Nilai Kontrak / Lumpsum</label>
+<input id="ctValue" type="number" placeholder="Otomatis dari tonase × harga, atau isi lumpsum">
+
+<label id="ctRouteLabel">Rute / Lokasi Pekerjaan</label>
+<input id="ctRoute" placeholder="Pelabuhan muat → tujuan / lokasi kerja">
+
+<label>Skema Pembayaran</label>
+<textarea id="ctPayment" placeholder="Contoh: 50% tanda tangan, 40% mulai loading, 10% tiba tujuan"></textarea>
+
+<div class="two">
+<div>
+<label>Masa Mulai</label>
+<input id="ctStart" type="date">
+</div>
+<div>
+<label>Masa Selesai</label>
+<input id="ctEnd" type="date">
+</div>
+</div>
+
+<label>Status</label>
+<select id="ctStatus">
+<option>Draft</option>
+<option>Aktif</option>
+<option>Selesai</option>
+<option>Dibatalkan</option>
+</select>
+
+<label>Keterangan Tambahan</label>
+<textarea id="ctNote"></textarea>
+
+<button class="primary" onclick="addContract()">Simpan Kontrak</button>
+</div>
+
+<div class="card">
+<h2>Ringkasan Kontrak Shipment Aktif</h2>
+<div class="grid">
+<div class="stat"><small>Jual Beli Ban</small><b id="ctSaleTotal">Rp0</b></div>
+<div class="stat"><small>Kontrak Tongkang</small><b id="ctBargeTotal">Rp0</b></div>
+<div class="stat"><small>PBM ke Pabrik</small><b id="ctPbmTotal">Rp0</b></div>
+<div class="stat"><small>Total Komitmen</small><b id="ctGrandTotal">Rp0</b></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Daftar Kontrak</h2>
+<div id="contractList"></div>
+</div>
+<div class="card no-print">
+<h2>Draft Kontrak Otomatis</h2>
+<p class="muted">Pilih kontrak pada daftar untuk membuat draft siap cetak.</p>
+<button class="secondary" onclick="fillContractDraftFromLatest()">Gunakan Kontrak Terakhir</button>
+<button class="primary" onclick="window.print()">Cetak / Simpan PDF</button>
+</div>
+<div class="card">
+<div id="contractPreview" class="doc">
+<div class="dochead">
+<h2>PT KALTIM BUMI UNGGUL</h2>
+<p>Jl. Yos Sudarso 1, Gg. Bakti Jaya 2 No. 68</p>
+<p>Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur</p>
+</div>
+<br>
+<h2 class="doctitle" id="contractTitle">DRAFT KONTRAK</h2>
+<div id="contractBody"><p class="muted">Belum ada kontrak yang dipilih.</p></div>
+</div>
+</div>
+</section>
+
+<section id="backup" class="page"><div class="card"><h2>Backup & Restore</h2><button class="success" onclick="backup()">Download Backup</button><label>Restore JSON</label><input id="restore" type="file" accept=".json"><button class="secondary" onclick="restoreData()">Restore</button><button class="danger" onclick="resetData()">Reset Semua Data</button></div></section>
+</main>
+<nav><button id="nDash" class="active" onclick="openP('dash')">Dashboard</button><button id="nMaster" onclick="openP('master')">Master</button><button id="nShip" onclick="openP('ship')">Shipment</button><button id="nHpp" onclick="openP('hpp')">HPP</button><button id="nLoading" onclick="openP('loading')">Loading</button><button id="nOps" onclick="openP('ops')">Operasional</button><button id="nActual" onclick="openP('actual')">Realisasi</button><button id="nCash" onclick="openP('cash')">Keuangan</button><button id="nRitase" onclick="openP('ritase')">Ritase</button><button id="nRitPay" onclick="openP('ritpay')">Bayar Ritase</button><button id="nAttachments" onclick="openP('attachments')">Lampiran</button><button id="nDaily" onclick="openP('daily')">Laporan Harian</button><button id="nProfit" onclick="openP('profit')">Laba Rugi</button><button id="nBilling" onclick="openP('billing')">Termin</button><button id="nContract" onclick="openP('contract')">Kontrak</button><button id="nDocs" onclick="openP('docs')">Dokumen</button><button id="nBackup" onclick="openP('backup')">Backup</button></nav>
+<script>
+const rp=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(+n||0),fm=n=>new Intl.NumberFormat('id-ID',{maximumFractionDigits:2}).format(+n||0),G=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},S=(k,v)=>localStorage.setItem(k,JSON.stringify(v));const K={m:'k31m',s:'k31s',act:'k31active',h:'k31h',l:'k31l',a:'k31a',c:'k31c',o:'k40ops',ct:'k62contracts',bl:'k65billing',dy:'k67daily',at:'k68attachments',rt:'k71ritase',rp:'k72ritpay'};let mt='buyer';
+const M=()=>G(K.m,{buyer:[],supplier:[],kapal:[],pelabuhan:[],pbm:[]}),SH=()=>G(K.s,[]),AI=()=>G(K.act,null),AS=()=>SH().find(x=>x.id===AI())||null,H=()=>G(K.h,[]),L=()=>G(K.l,[]),A=()=>G(K.a,[]),C=()=>G(K.c,[]),O=()=>G(K.o,[]),CT=()=>G(K.ct,[]),BL=()=>G(K.bl,[]),DY=()=>G(K.dy,[]),AT=()=>G(K.at,[]),RT=()=>G(K.rt,[]),RP=()=>G(K.rp,[]);
+function openP(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.getElementById('n'+id[0].toUpperCase()+id.slice(1)).classList.add('active');scrollTo(0,0);if(id==='docs')renderDoc()}
+function setMT(t,b){mt=t;document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()}
+function addMaster(){let n=mName.value.trim();if(!n)return alert('Isi nama.');let d=M();d[mt].push({id:Date.now(),name:n,note:mNote.value.trim()});S(K.m,d);mName.value=mNote.value='';render()}
+function delM(id){let d=M();d[mt]=d[mt].filter(x=>x.id!==id);S(K.m,d);render()}
+function opts(el,a){el.innerHTML='<option value="">Pilih</option>'+a.map(x=>`<option>${x.name}</option>`).join('')}
+function addShip(){let o={id:Date.now(),no:sNo.value.trim(),name:sName.value.trim(),buyer:sBuyer.value,supplier:sSupplier.value,target:+sTarget.value||0,price:+sPrice.value||0,load:sLoad.value,dis:sDis.value,tug:sTug.value,barge:sBarge.value,status:sStatus.value};if(!o.no||!o.name||o.target<=0||o.price<=0)return alert('Lengkapi shipment.');let d=SH();d.push(o);S(K.s,d);S(K.act,o.id);render()}
+function active(id){S(K.act,id);render()}function delS(id){if(confirm('Hapus shipment?')){S(K.s,SH().filter(x=>x.id!==id));S(K.h,H().filter(x=>x.sid!==id));S(K.l,L().filter(x=>x.sid!==id));S(K.a,A().filter(x=>x.sid!==id));S(K.c,C().filter(x=>x.sid!==id));S(K.ct,CT().filter(x=>x.sid!==id));S(K.bl,BL().filter(x=>x.sid!==id));S(K.dy,DY().filter(x=>x.sid!==id));S(K.at,AT().filter(x=>x.sid!==id));S(K.rt,RT().filter(x=>x.sid!==id));S(K.rp,RP().filter(x=>x.sid!==id));if(AI()===id)S(K.act,null);render()}}
+function addHpp(){let s=AS();if(!s)return alert('Pilih shipment aktif.');let n=hName.value.trim(),q=+hQty.value||0,p=+hPrice.value||0;if(!n||q<=0||p<=0)return alert('Lengkapi budget.');let d=H();d.push({id:Date.now(),sid:s.id,name:n,type:hType.value,qty:q,price:p,total:q*p});S(K.h,d);hName.value=hQty.value=hPrice.value='';render()}function delH(id){S(K.h,H().filter(x=>x.id!==id));render()}
+function addLoad(){let s=AS(),t=+lTon.value||0;if(!s)return alert('Pilih shipment aktif.');if(!lDate.value||t<=0)return alert('Isi tanggal dan tonase.');let d=L();d.push({id:Date.now(),sid:s.id,date:lDate.value,rit:+lRit.value||0,ton:t,start:lStart.value,end:lEnd.value,note:lNote.value.trim()});S(K.l,d);lRit.value=lTon.value=lNote.value='';render()}function delL(id){S(K.l,L().filter(x=>x.id!==id));render()}
+
+function calcOpsHm(){let hm1=+oHm1.value||0,hm2=+oHm2.value||0,rate=+oHmRate.value||0,hm=Math.max(hm2-hm1,0);oHmCost.value=Math.round(hm*rate)}
+function addOps(){let s=AS();if(!s)return alert('Pilih shipment aktif.');let hm1=+oHm1.value||0,hm2=+oHm2.value||0,hm=Math.max(hm2-hm1,0),hmRate=+oHmRate.value||0,hmCost=hm*hmRate,solar=+oSolar.value||0,labor=+oLabor.value||0,sc=+oSolarCost.value||0,lc=+oLaborCost.value||0,other=+oOther.value||0;if(!oDate.value||!oName.value.trim())return alert('Isi tanggal dan nama alat/kegiatan.');if(hm>0&&hmRate<=0)return alert('Isi harga HM per jam.');let d=O();d.push({id:Date.now(),sid:s.id,date:oDate.value,name:oName.value.trim(),hm1,hm2,hm,hmRate,hmCost,solar,labor,solarCost:sc,laborCost:lc,other,total:hmCost+sc+lc+other,note:oNote.value.trim()});S(K.o,d);oName.value=oHm1.value=oHm2.value=oHmRate.value=oHmCost.value=oSolar.value=oLabor.value=oSolarCost.value=oLaborCost.value=oOther.value=oNote.value='';renderOps()}
+function delOps(id){S(K.o,O().filter(x=>x.id!==id));renderOps()}
+function renderOps(){let s=AS(),d=O().filter(x=>x.sid===s?.id),hm=d.reduce((z,x)=>z+(+x.hm||0),0),solar=d.reduce((z,x)=>z+(+x.solar||0),0),labor=d.reduce((z,x)=>z+(+x.labor||0),0),cost=d.reduce((z,x)=>z+(+x.total||0),0);if(typeof oTotalHm!=='undefined'){oTotalHm.textContent=fm(hm)+' Jam';oTotalSolar.textContent=fm(solar)+' Liter';oTotalLabor.textContent=fm(labor)+' Orang';oTotalCost.textContent=rp(cost);oList.innerHTML=d.length?d.slice().reverse().map(x=>`<div class=row><div class=head><div><b>${x.date} — ${x.name}</b><div class=muted>HM ${fm(x.hm)} Jam × ${rp(x.hmRate||0)} = ${rp(x.hmCost||0)}<br>Solar ${fm(x.solar)} L • Buruh ${fm(x.labor)}<br>Biaya Solar ${rp(x.solarCost||0)} • Biaya Buruh ${rp(x.laborCost||0)} • Lainnya ${rp(x.other||0)}<br>${x.note||'-'}</div></div><span class=money>${rp(x.total)}</span></div><button class=small onclick=delOps(${x.id})>Hapus</button></div>`).join(''):'Belum ada operasional.';}}
+function addActual(){let s=AS(),h=H().find(x=>x.id===+aHpp.value),q=+aQty.value||0,p=+aPrice.value||0;if(!s||!h||!aDate.value||q<=0||p<=0)return alert('Lengkapi realisasi.');let d=A();d.push({id:Date.now(),sid:s.id,hid:h.id,name:h.name,date:aDate.value,supplier:aSupplier.value.trim(),qty:q,price:p,total:q*p,status:aStatus.value});S(K.a,d);aSupplier.value=aQty.value=aPrice.value='';render()}function delA(id){S(K.a,A().filter(x=>x.id!==id));render()}
+function addCash(){let s=AS(),v=+cAmt.value||0;if(!s||!cDate.value||!cCat.value.trim()||v<=0)return alert('Lengkapi transaksi.');let d=C();d.push({id:Date.now(),sid:s.id,date:cDate.value,type:cType.value,cat:cCat.value.trim(),amt:v,note:cNote.value.trim()});S(K.c,d);cCat.value=cAmt.value=cNote.value='';render()}function delC(id){S(K.c,C().filter(x=>x.id!==id));render()}
+
+let currentContractType='sale';
+
+function setContractType(type,btn){
+currentContractType=type;
+ctType.value=type;
+document.querySelectorAll('#contract .tabs button').forEach(x=>x.classList.remove('active'));
+if(btn)btn.classList.add('active');
+
+if(type==='sale'){
+ctPartyLabel.textContent='Buyer / Pihak Kedua';
+ctObjectLabel.textContent='Objek Kontrak';
+ctObject.placeholder='Jual beli ban bekas';
+ctQtyLabel.textContent='Tonase';
+ctRateLabel.textContent='Harga per Ton';
+ctRouteLabel.textContent='Lokasi Muat → Tujuan';
+ctParty.placeholder='Nama buyer';
+ctRoute.placeholder='Contoh: Maloy → Kendal';
+}else if(type==='barge'){
+ctPartyLabel.textContent='Pemilik / Vendor Tongkang';
+ctObjectLabel.textContent='Tugboat / Tongkang';
+ctObject.placeholder='Contoh: TB Monang / BG ...';
+ctQtyLabel.textContent='Target Muatan';
+ctRateLabel.textContent='Freight per Ton (opsional)';
+ctRouteLabel.textContent='Rute Pelayaran';
+ctParty.placeholder='Nama perusahaan pemilik kapal';
+ctRoute.placeholder='Pelabuhan muat → pelabuhan bongkar';
+}else{
+ctPartyLabel.textContent='Perusahaan PBM / Vendor';
+ctObjectLabel.textContent='Ruang Lingkup Pekerjaan';
+ctObject.placeholder='Bongkar, stockpile, trucking ke pabrik';
+ctQtyLabel.textContent='Target Tonase';
+ctRateLabel.textContent='Tarif per Ton';
+ctRouteLabel.textContent='Pelabuhan / Stockpile / Pabrik';
+ctParty.placeholder='Nama perusahaan PBM';
+ctRoute.placeholder='Lokasi bongkar sampai pabrik tujuan';
+}
+}
+
+function addContract(){
+let s=AS();
+if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+
+let qty=+ctQty.value||0;
+let rate=+ctRate.value||0;
+let manual=+ctValue.value||0;
+let value=manual>0?manual:qty*rate;
+
+let item={
+id:Date.now(),
+sid:s.id,
+type:ctType.value,
+no:ctNo.value.trim(),
+date:ctDate.value,
+party:ctParty.value.trim(),
+object:ctObject.value.trim(),
+qty,
+rate,
+value,
+route:ctRoute.value.trim(),
+payment:ctPayment.value.trim(),
+start:ctStart.value,
+end:ctEnd.value,
+status:ctStatus.value,
+note:ctNote.value.trim()
+};
+
+if(!item.no||!item.date||!item.party||!item.object||value<=0){
+return alert('Lengkapi nomor, tanggal, pihak kedua, objek, dan nilai kontrak.');
+}
+
+let data=CT();
+data.push(item);
+S(K.ct,data);
+
+ctNo.value=ctParty.value=ctObject.value=ctQty.value=ctRate.value=ctValue.value='';
+ctRoute.value=ctPayment.value=ctStart.value=ctEnd.value=ctNote.value='';
+ctStatus.value='Draft';
+renderContracts();
+}
+
+function delContract(id){
+if(!confirm('Hapus kontrak ini?'))return;
+S(K.ct,CT().filter(x=>x.id!==id));
+renderContracts();
+}
+
+function contractName(type){
+return type==='sale'?'Jual Beli Ban':type==='barge'?'Tongkang':'PBM ke Pabrik';
+}
+
+function renderContracts(){
+if(typeof contractList==='undefined')return;
+let s=AS();
+let data=s?CT().filter(x=>x.sid===s.id):[];
+
+let sale=data.filter(x=>x.type==='sale').reduce((z,x)=>z+(+x.value||0),0);
+let barge=data.filter(x=>x.type==='barge').reduce((z,x)=>z+(+x.value||0),0);
+let pbm=data.filter(x=>x.type==='pbm').reduce((z,x)=>z+(+x.value||0),0);
+
+ctSaleTotal.textContent=rp(sale);
+ctBargeTotal.textContent=rp(barge);
+ctPbmTotal.textContent=rp(pbm);
+ctGrandTotal.textContent=rp(sale+barge+pbm);
+
+contractList.innerHTML=data.length?data.slice().reverse().map(x=>`
+<div class=row>
+<div class=head>
+<div>
+<b>${contractName(x.type)} — ${x.no}</b>
+<div class=muted>
+${x.date||'-'} • ${x.status}<br>
+Pihak Kedua: ${x.party||'-'}<br>
+Objek: ${x.object||'-'}<br>
+Rute/Lokasi: ${x.route||'-'}<br>
+${fm(x.qty)} Ton × ${rp(x.rate)}<br>
+Pembayaran: ${x.payment||'-'}
+</div>
+</div>
+<span class=money>${rp(x.value)}</span>
+</div>
+<div class="two"><button class=secondary onclick=renderContractDraft(${x.id})>Buat Draft</button><button class=small onclick=delContract(${x.id})>Hapus</button></div>
+</div>`).join(''):'Belum ada kontrak untuk shipment aktif.';
+}
+
+
+function tanggalPanjang(v){
+if(!v)return '-';
+return new Date(v+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'long',year:'numeric'});
+}
+function fillContractDraftFromLatest(){
+let s=AS();if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+let data=CT().filter(x=>x.sid===s.id);
+if(!data.length)return alert('Belum ada kontrak.');
+renderContractDraft(data[data.length-1].id);
+}
+function partyOneBlock(){
+return `<div class="docgrid">
+<div>Nama</div><div>:</div><div>Samuel Paserang</div>
+<div>Jabatan</div><div>:</div><div>Direktur PT Kaltim Bumi Unggul</div>
+<div>Alamat</div><div>:</div><div>Jl. Yos Sudarso 1, Gg. Bakti Jaya 2 No. 68, Sangatta Utara, Kabupaten Kutai Timur</div>
+</div>`;
+}
+function partyTwoBlock(x){
+return `<div class="docgrid">
+<div>Nama / Perusahaan</div><div>:</div><div>${x.party||'-'}</div>
+<div>Alamat</div><div>:</div><div>______________________________</div>
+<div>Jabatan</div><div>:</div><div>______________________________</div>
+</div>`;
+}
+function article(title,body){
+return `<h3 style="text-align:center">${title}</h3><p style="text-align:justify;line-height:1.65">${body}</p>`;
+}
+function renderContractDraft(id){
+let x=CT().find(z=>z.id===id);if(!x)return alert('Data kontrak tidak ditemukan.');
+let s=SH().find(z=>z.id===x.sid);
+contractTitle.textContent='PERJANJIAN '+contractName(x.type).toUpperCase();
+
+let intro=`<p style="text-align:justify;line-height:1.65">
+Pada hari ini, ${tanggalPanjang(x.date)}, para pihak yang bertanda tangan di bawah ini:</p>
+<h3>PIHAK PERTAMA</h3>${partyOneBlock()}<br>
+<h3>PIHAK KEDUA</h3>${partyTwoBlock(x)}
+<p style="text-align:justify;line-height:1.65">Para pihak selanjutnya secara bersama-sama disebut “Para Pihak”.</p>`;
+
+let body='';
+if(x.type==='sale'){
+body=
+article('PASAL 1 — OBJEK PERJANJIAN',`PIHAK PERTAMA menjual dan PIHAK KEDUA membeli ${x.object||'ban bekas'} dengan estimasi jumlah ${fm(x.qty)} ton untuk pengiriman ${x.route||'-'}.`)+
+article('PASAL 2 — HARGA DAN NILAI KONTRAK',`Harga disepakati sebesar ${rp(x.rate)} per ton dengan nilai kontrak ${rp(x.value)}. Kuantitas akhir mengikuti hasil timbangan atau draft survey yang disepakati.`)+
+article('PASAL 3 — PEMBAYARAN',x.payment||'Pembayaran dilakukan sesuai kesepakatan Para Pihak.')+
+article('PASAL 4 — PENYERAHAN DAN PELAKSANAAN',`Pelaksanaan terkait shipment ${s?.no||'-'} dilakukan pada rute ${x.route||'-'}, mulai ${tanggalPanjang(x.start)} sampai ${tanggalPanjang(x.end)}.`)+
+article('PASAL 5 — MUTU DAN RISIKO','Barang diserahkan dalam kondisi alami sesuai kesepakatan. Risiko beralih sesuai titik penyerahan yang disepakati.')+
+article('PASAL 6 — KEADAAN KAHAR','Para Pihak dibebaskan dari tanggung jawab atas keterlambatan akibat keadaan kahar sepanjang dapat dibuktikan dan segera diberitahukan secara tertulis.')+
+article('PASAL 7 — PERSELISIHAN','Perselisihan diselesaikan terlebih dahulu secara musyawarah. Apabila tidak tercapai, Para Pihak menempuh upaya hukum sesuai ketentuan yang berlaku.');
+}else if(x.type==='barge'){
+body=
+article('PASAL 1 — OBJEK CHARTER',`PIHAK KEDUA menyediakan ${x.object||'tugboat dan tongkang'} untuk shipment ${s?.no||'-'} dengan rute ${x.route||'-'} dan target muatan ${fm(x.qty)} ton.`)+
+article('PASAL 2 — NILAI SEWA/FREIGHT',`Nilai sewa/freight disepakati sebesar ${rp(x.value)}${x.rate?` atau ${rp(x.rate)} per ton`:''}.`)+
+article('PASAL 3 — PEMBAYARAN',x.payment||'Pembayaran dilaksanakan berdasarkan tahapan yang disepakati Para Pihak.')+
+article('PASAL 4 — KELAIKLAUTAN DAN DOKUMEN','PIHAK KEDUA menjamin kapal laik laut, dokumen kapal berlaku, awak kapal memenuhi persyaratan, dan perizinan pelayaran tersedia.')+
+article('PASAL 5 — LAYTIME DAN DEMURRAGE','Waktu muat/bongkar, waiting time, demurrage, serta pembagian tanggung jawab mengikuti kesepakatan tertulis dan kondisi pelabuhan.')+
+article('PASAL 6 — RISIKO DAN ASURANSI','PIHAK KEDUA bertanggung jawab atas risiko kapal dan operasional pelayaran, sedangkan risiko muatan mengikuti titik serah yang disepakati.')+
+article('PASAL 7 — PERSELISIHAN','Keadaan kahar diberitahukan secara tertulis. Perselisihan diselesaikan secara musyawarah sebelum menempuh upaya hukum.');
+}else{
+body=
+article('PASAL 1 — RUANG LINGKUP PEKERJAAN',`PIHAK KEDUA melaksanakan ${x.object||'pekerjaan PBM, stockpile, dan mobilisasi ke pabrik'} pada lokasi ${x.route||'-'} untuk target ${fm(x.qty)} ton.`)+
+article('PASAL 2 — NILAI PEKERJAAN',`Tarif disepakati sebesar ${rp(x.rate)} per ton dengan estimasi nilai kontrak ${rp(x.value)}.`)+
+article('PASAL 3 — PEMBAYARAN',x.payment||'Pembayaran dilakukan berdasarkan progres pekerjaan yang telah diverifikasi.')+
+article('PASAL 4 — PERSONEL, ALAT, DAN KESELAMATAN','PIHAK KEDUA wajib menyediakan personel, alat, tenaga kerja, perlengkapan keselamatan, serta mematuhi ketentuan pelabuhan dan pabrik.')+
+article('PASAL 5 — PENGUKURAN HASIL','Realisasi tonase dan progres dibuktikan dengan tally sheet, surat jalan, berita acara, atau dokumen operasional lain yang disepakati.')+
+article('PASAL 6 — TANGGUNG JAWAB','Kerusakan, kehilangan, atau biaya tambahan akibat kelalaian PIHAK KEDUA menjadi tanggung jawab PIHAK KEDUA.')+
+article('PASAL 7 — PERSELISIHAN','Perselisihan diselesaikan secara musyawarah. Apabila tidak tercapai, Para Pihak dapat menempuh upaya hukum.');
+}
+let close=article('PASAL 8 — PENUTUP',`Perjanjian berlaku sejak ditandatangani. Perubahan hanya sah apabila dibuat tertulis dan ditandatangani Para Pihak. Keterangan tambahan: ${x.note||'-'}.`)+
+`<div class="sig"><div>PIHAK PERTAMA<div class="space"></div><b>Samuel Paserang</b><br>Direktur PT Kaltim Bumi Unggul</div>
+<div>PIHAK KEDUA<div class="space"></div><b>${x.party||'(________________)'}</b></div></div>`;
+contractBody.innerHTML=intro+body+close;
+openP('contract');
+setTimeout(()=>contractPreview.scrollIntoView({behavior:'smooth'}),100);
+}
+
+
+function addBilling(){
+let s=AS();
+if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+
+let amount=+bAmount.value||0;
+let paid=+bPaid.value||0;
+
+if(!bName.value.trim()||!bDue.value||!bParty.value.trim()||amount<=0){
+return alert('Lengkapi nama termin, jatuh tempo, pihak terkait, dan nilai termin.');
+}
+
+if(paid>amount)return alert('Nilai pembayaran tidak boleh lebih besar dari nilai termin.');
+
+let status=bStatus.value;
+if(paid>=amount)status='Lunas';
+else if(paid>0)status='Dibayar Sebagian';
+
+let data=BL();
+data.push({
+id:Date.now(),
+sid:s.id,
+kind:bKind.value,
+name:bName.value.trim(),
+due:bDue.value,
+party:bParty.value.trim(),
+amount,
+paid,
+status,
+note:bNote.value.trim()
+});
+S(K.bl,data);
+
+bName.value=bParty.value=bAmount.value=bPaid.value=bNote.value='';
+bStatus.value='Belum Jatuh Tempo';
+renderBilling();
+}
+
+function delBilling(id){
+if(!confirm('Hapus termin ini?'))return;
+S(K.bl,BL().filter(x=>x.id!==id));
+renderBilling();
+}
+
+function payBilling(id){
+let data=BL();
+let x=data.find(z=>z.id===id);
+if(!x)return;
+
+let input=prompt('Masukkan pembayaran tambahan:',0);
+if(input===null)return;
+
+let add=+input||0;
+if(add<=0)return alert('Nominal tidak valid.');
+
+x.paid=Math.min((+x.paid||0)+add,+x.amount||0);
+x.status=x.paid>=x.amount?'Lunas':'Dibayar Sebagian';
+S(K.bl,data);
+renderBilling();
+}
+
+function dueState(x){
+let today=new Date();
+today.setHours(0,0,0,0);
+let due=new Date(x.due+'T00:00:00');
+if(x.status==='Lunas')return 'Lunas';
+if(due<today)return 'Jatuh Tempo';
+return x.status||'Belum Jatuh Tempo';
+}
+
+function renderBilling(){
+if(typeof billingList==='undefined')return;
+
+let s=AS();
+let data=s?BL().filter(x=>x.sid===s.id):[];
+
+let rec=data.filter(x=>x.kind==='piutang');
+let pay=data.filter(x=>x.kind==='utang');
+
+let recTotal=rec.reduce((z,x)=>z+(+x.amount||0),0);
+let recPaid=rec.reduce((z,x)=>z+(+x.paid||0),0);
+let payTotal=pay.reduce((z,x)=>z+(+x.amount||0),0);
+let payPaid=pay.reduce((z,x)=>z+(+x.paid||0),0);
+
+bReceivable.textContent=rp(recTotal);
+bReceivablePaid.textContent=rp(recPaid);
+bPayable.textContent=rp(payTotal);
+bPayablePaid.textContent=rp(payPaid);
+bReceivableRemain.textContent=rp(recTotal-recPaid);
+bPayableRemain.textContent=rp(payTotal-payPaid);
+
+billingList.innerHTML=data.length?data.slice().reverse().map(x=>{
+let remain=(+x.amount||0)-(+x.paid||0);
+let state=dueState(x);
+return `<div class=row>
+<div class=head>
+<div>
+<b>${x.kind==='piutang'?'Piutang':'Utang'} — ${x.name}</b>
+<div class=muted>
+Pihak: ${x.party}<br>
+Jatuh Tempo: ${tanggalPanjang(x.due)}<br>
+Status: ${state}<br>
+${x.note||'-'}
+</div>
+<div class=money>${rp(x.paid)} / ${rp(x.amount)}</div>
+<div class=muted>Sisa: ${rp(remain)}</div>
+</div>
+</div>
+<div class="two">
+<button class=secondary onclick=payBilling(${x.id})>Tambah Pembayaran</button>
+<button class=small onclick=delBilling(${x.id})>Hapus</button>
+</div>
+</div>`;
+}).join(''):'Belum ada termin untuk shipment aktif.';
+}
+
+
+function getShipmentRevenue(s){
+if(!s)return 0;
+let actualTon=L().filter(x=>x.sid===s.id).reduce((z,x)=>z+(+x.ton||0),0);
+let target=+s.target||0;
+let contract=+s.contract||0;
+let sellRate=target>0?contract/target:0;
+return {
+actualTon,
+target,
+contract,
+sellRate,
+actualRevenue:actualTon*sellRate
+};
+}
+
+function getShipmentCosts(s){
+if(!s)return {budget:0,actual:0};
+let budgets=H().filter(x=>x.sid===s.id);
+let actuals=A().filter(x=>x.sid===s.id);
+let ops=O().filter(x=>x.sid===s.id);
+
+let budget=budgets.reduce((z,x)=>z+(+x.total||0),0);
+let actualCost=actuals.reduce((z,x)=>z+(+x.total||0),0);
+let opsCost=ops.reduce((z,x)=>z+(+x.total||0),0);
+
+return {
+budget,
+actual:actualCost+opsCost
+};
+}
+
+function renderProfit(){
+if(typeof pContract==='undefined')return;
+
+let s=AS();
+if(!s){
+[
+'pContract','pTarget','pActualTon','pSellRate','pBudget','pActualCost',
+'pProfit','pMargin','pHppTon','pProfitTon','pVariance','pProgress',
+'pProjectedRevenue','pProjectedCost','pProjectedProfit','pProjectedMargin'
+].forEach(id=>{
+let el=document.getElementById(id);
+if(el)el.textContent=id.includes('Margin')||id==='pProgress'?'0%':'Rp0';
+});
+profitStatus.innerHTML='<b>Belum ada shipment aktif.</b>';
+return;
+}
+
+let r=getShipmentRevenue(s);
+let c=getShipmentCosts(s);
+
+let revenue=r.actualRevenue;
+let profit=revenue-c.actual;
+let margin=revenue>0?(profit/revenue)*100:0;
+let hppTon=r.actualTon>0?c.actual/r.actualTon:0;
+let profitTon=r.actualTon>0?profit/r.actualTon:0;
+let variance=c.budget-c.actual;
+let progress=r.target>0?(r.actualTon/r.target)*100:0;
+
+let projectedRevenue=r.contract;
+let projectedCost=r.actualTon>0?hppTon*r.target:c.budget;
+let projectedProfit=projectedRevenue-projectedCost;
+let projectedMargin=projectedRevenue>0?(projectedProfit/projectedRevenue)*100:0;
+
+pContract.textContent=rp(r.contract);
+pTarget.textContent=fm(r.target)+' Ton';
+pActualTon.textContent=fm(r.actualTon)+' Ton';
+pSellRate.textContent=rp(r.sellRate);
+pBudget.textContent=rp(c.budget);
+pActualCost.textContent=rp(c.actual);
+pProfit.textContent=rp(profit);
+pMargin.textContent=margin.toFixed(2)+'%';
+pHppTon.textContent=rp(hppTon);
+pProfitTon.textContent=rp(profitTon);
+pVariance.textContent=rp(variance);
+pProgress.textContent=progress.toFixed(2)+'%';
+
+pProjectedRevenue.textContent=rp(projectedRevenue);
+pProjectedCost.textContent=rp(projectedCost);
+pProjectedProfit.textContent=rp(projectedProfit);
+pProjectedMargin.textContent=projectedMargin.toFixed(2)+'%';
+
+let status='';
+if(c.actual>c.budget&&c.budget>0){
+status='<b style="color:#b42318">Biaya aktual sudah melebihi budget.</b><div class=muted>Segera evaluasi komponen biaya terbesar sebelum pekerjaan dilanjutkan.</div>';
+}else if(projectedProfit<0){
+status='<b style="color:#b42318">Proyeksi shipment mengalami kerugian.</b><div class=muted>Harga jual atau biaya operasional perlu disesuaikan.</div>';
+}else if(progress<50){
+status='<b style="color:#b54708">Progress masih di bawah 50%.</b><div class=muted>Data profit masih bersifat sementara dan perlu dipantau harian.</div>';
+}else{
+status='<b style="color:#067647">Shipment masih dalam kondisi terkendali.</b><div class=muted>Margin dan biaya aktual masih dalam batas yang dapat dipantau.</div>';
+}
+profitStatus.innerHTML=status;
+}
+
+
+function addDaily(){
+let s=AS();
+if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+
+let item={
+id:Date.now(),
+sid:s.id,
+date:dDate.value,
+shift:dShift.value,
+start:dStart.value,
+end:dEnd.value,
+rit:+dRit.value||0,
+ton:+dTon.value||0,
+hm:+dHm.value||0,
+solar:+dSolar.value||0,
+labor:+dLabor.value||0,
+weather:dWeather.value,
+activity:dActivity.value.trim(),
+problem:dProblem.value.trim(),
+action:dAction.value.trim(),
+next:dNext.value.trim(),
+supervisor:dSupervisor.value.trim()
+};
+
+if(!item.date||!item.activity||!item.supervisor){
+return alert('Tanggal, uraian kegiatan, dan nama pengawas wajib diisi.');
+}
+
+let data=DY();
+data.push(item);
+S(K.dy,data);
+
+dRit.value=dTon.value=dHm.value=dSolar.value=dLabor.value='';
+dActivity.value=dProblem.value=dAction.value=dNext.value=dSupervisor.value='';
+renderDaily();
+}
+
+function delDaily(id){
+if(!confirm('Hapus laporan harian ini?'))return;
+S(K.dy,DY().filter(x=>x.id!==id));
+renderDaily();
+}
+
+function renderDaily(){
+if(typeof dailyList==='undefined')return;
+
+let s=AS();
+let data=s?DY().filter(x=>x.sid===s.id):[];
+
+let days=new Set(data.map(x=>x.date)).size;
+let rit=data.reduce((z,x)=>z+(+x.rit||0),0);
+let ton=data.reduce((z,x)=>z+(+x.ton||0),0);
+let hm=data.reduce((z,x)=>z+(+x.hm||0),0);
+let solar=data.reduce((z,x)=>z+(+x.solar||0),0);
+let avg=days>0?ton/days:0;
+
+dDays.textContent=days+' Hari';
+dTotalRit.textContent=fm(rit)+' Rit';
+dTotalTon.textContent=fm(ton)+' Ton';
+dAvgTon.textContent=fm(avg)+' Ton';
+dTotalHm.textContent=fm(hm)+' Jam';
+dTotalSolar.textContent=fm(solar)+' Liter';
+
+dailyList.innerHTML=data.length?data.slice().reverse().map(x=>`
+<div class=row>
+<div class=head>
+<div>
+<b>${tanggalPanjang(x.date)} — ${x.shift}</b>
+<div class=muted>
+Jam ${x.start||'-'} s/d ${x.end||'-'}<br>
+Ritase ${fm(x.rit)} • Tonase ${fm(x.ton)} Ton<br>
+HM ${fm(x.hm)} Jam • Solar ${fm(x.solar)} Liter • Buruh ${fm(x.labor)}<br>
+Cuaca: ${x.weather}<br>
+Kegiatan: ${x.activity}<br>
+Kendala: ${x.problem||'-'}<br>
+Pengawas: ${x.supervisor}
+</div>
+</div>
+</div>
+<div class="two">
+<button class=secondary onclick="selectDailyPreview(${x.id})">Lihat</button>
+<button class=small onclick="delDaily(${x.id})">Hapus</button>
+</div>
+</div>
+`).join(''):'Belum ada laporan harian.';
+
+dailyPrintSelect.innerHTML='<option value="">Pilih laporan</option>'+data.slice().reverse().map(x=>
+`<option value="${x.id}">${tanggalPanjang(x.date)} — ${x.shift}</option>`
+).join('');
+}
+
+function selectDailyPreview(id){
+dailyPrintSelect.value=String(id);
+previewDaily();
+}
+
+function previewDaily(){
+let id=+dailyPrintSelect.value;
+let x=DY().find(z=>z.id===id);
+let s=AS();
+if(!x)return alert('Pilih laporan harian terlebih dahulu.');
+
+dailyPreviewBody.innerHTML=`
+<h2 class="doctitle">LAPORAN HARIAN OPERASIONAL</h2>
+<div class="docgrid">
+<div>Shipment</div><div>:</div><div>${s?.no||'-'}</div>
+<div>Tanggal</div><div>:</div><div>${tanggalPanjang(x.date)}</div>
+<div>Shift</div><div>:</div><div>${x.shift}</div>
+<div>Jam Kerja</div><div>:</div><div>${x.start||'-'} s/d ${x.end||'-'}</div>
+<div>Cuaca</div><div>:</div><div>${x.weather}</div>
+<div>Ritase</div><div>:</div><div>${fm(x.rit)} Rit</div>
+<div>Tonase</div><div>:</div><div>${fm(x.ton)} Ton</div>
+<div>HM Alat</div><div>:</div><div>${fm(x.hm)} Jam</div>
+<div>Solar</div><div>:</div><div>${fm(x.solar)} Liter</div>
+<div>Jumlah Buruh</div><div>:</div><div>${fm(x.labor)} Orang</div>
+</div>
+<br>
+<h3>URAIAN KEGIATAN</h3>
+<p style="text-align:justify;line-height:1.6">${x.activity||'-'}</p>
+<h3>KENDALA</h3>
+<p style="text-align:justify;line-height:1.6">${x.problem||'-'}</p>
+<h3>TINDAKAN / SOLUSI</h3>
+<p style="text-align:justify;line-height:1.6">${x.action||'-'}</p>
+<h3>RENCANA HARI BERIKUTNYA</h3>
+<p style="text-align:justify;line-height:1.6">${x.next||'-'}</p>
+<div class="sig">
+<div>
+Mengetahui
+<div class="space"></div>
+<b>Samuel Paserang</b><br>
+Direktur
+</div>
+<div>
+Pengawas Lapangan
+<div class="space"></div>
+<b>${x.supervisor||'(________________)'}</b>
+</div>
+</div>`;
+dailyPreview.scrollIntoView({behavior:'smooth'});
+}
+
+
+let pendingAttachment=null;
+
+atFile.addEventListener('change',async function(){
+let file=this.files[0];
+pendingAttachment=null;
+
+if(!file){
+atPreviewBox.innerHTML='<p class="muted">Belum ada file dipilih.</p>';
+return;
+}
+
+if(file.type.startsWith('image/')){
+try{
+let data=await compressImage(file,1200,0.72);
+pendingAttachment={
+name:file.name,
+type:'image',
+mime:'image/jpeg',
+data
+};
+atPreviewBox.innerHTML=`<img src="${data}" style="width:100%;max-height:260px;object-fit:contain;border-radius:12px">
+<p class="muted">${file.name} • Dikompres otomatis</p>`;
+}catch(e){
+alert('Foto gagal diproses: '+e.message);
+}
+}else if(file.type==='application/pdf'||file.name.toLowerCase().endsWith('.pdf')){
+if(file.size>900000){
+this.value='';
+return alert('PDF terlalu besar. Maksimum sekitar 900 KB untuk penyimpanan lokal.');
+}
+let data=await fileToDataURL(file);
+pendingAttachment={
+name:file.name,
+type:'pdf',
+mime:file.type||'application/pdf',
+data
+};
+atPreviewBox.innerHTML=`<div class="file-icon">📄</div><p class="muted">${file.name}</p>`;
+}else{
+this.value='';
+alert('Gunakan file foto atau PDF.');
+}
+});
+
+function fileToDataURL(file){
+return new Promise((resolve,reject)=>{
+let reader=new FileReader();
+reader.onload=()=>resolve(reader.result);
+reader.onerror=()=>reject(new Error('File tidak dapat dibaca.'));
+reader.readAsDataURL(file);
+});
+}
+
+function compressImage(file,maxSize,quality){
+return new Promise((resolve,reject)=>{
+let reader=new FileReader();
+reader.onload=e=>{
+let img=new Image();
+img.onload=()=>{
+let w=img.width,h=img.height;
+if(w>maxSize||h>maxSize){
+let ratio=Math.min(maxSize/w,maxSize/h);
+w=Math.round(w*ratio);
+h=Math.round(h*ratio);
+}
+let canvas=document.createElement('canvas');
+canvas.width=w;
+canvas.height=h;
+let ctx=canvas.getContext('2d');
+ctx.drawImage(img,0,0,w,h);
+resolve(canvas.toDataURL('image/jpeg',quality));
+};
+img.onerror=()=>reject(new Error('Format gambar tidak didukung.'));
+img.src=e.target.result;
+};
+reader.onerror=()=>reject(new Error('Gambar tidak dapat dibaca.'));
+reader.readAsDataURL(file);
+});
+}
+
+function saveAttachment(){
+let s=AS();
+if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+if(!atDate.value||!atTitle.value.trim()||!pendingAttachment){
+return alert('Tanggal, judul, dan file wajib diisi.');
+}
+
+let data=AT();
+data.push({
+id:Date.now(),
+sid:s.id,
+date:atDate.value,
+category:atCategory.value,
+title:atTitle.value.trim(),
+amount:+atAmount.value||0,
+note:atNote.value.trim(),
+file:pendingAttachment
+});
+
+try{
+S(K.at,data);
+}catch(e){
+return alert('Penyimpanan penuh. Hapus sebagian lampiran atau lakukan backup terlebih dahulu.');
+}
+
+atTitle.value=atAmount.value=atNote.value='';
+atFile.value='';
+pendingAttachment=null;
+atPreviewBox.innerHTML='<p class="muted">Belum ada file dipilih.</p>';
+renderAttachments();
+}
+
+function delAttachment(id){
+if(!confirm('Hapus lampiran ini?'))return;
+S(K.at,AT().filter(x=>x.id!==id));
+renderAttachments();
+}
+
+function openAttachment(id){
+let x=AT().find(z=>z.id===id);
+if(!x||!x.file?.data)return;
+let win=window.open();
+if(!win)return alert('Izinkan pop-up untuk membuka lampiran.');
+if(x.file.type==='image'){
+win.document.write(`<title>${x.title}</title><img src="${x.file.data}" style="max-width:100%;height:auto">`);
+}else{
+win.location=x.file.data;
+}
+}
+
+function renderAttachments(){
+if(typeof attachmentList==='undefined')return;
+let s=AS();
+let data=s?AT().filter(x=>x.sid===s.id):[];
+
+let amount=data.reduce((z,x)=>z+(+x.amount||0),0);
+let photos=data.filter(x=>x.file?.type==='image').length;
+let proofs=data.filter(x=>['Nota Pembelian','Bukti Transfer'].includes(x.category)).length;
+
+atCount.textContent=data.length;
+atTotalAmount.textContent=rp(amount);
+atPhotoCount.textContent=photos;
+atProofCount.textContent=proofs;
+
+attachmentList.innerHTML=data.length?data.slice().reverse().map(x=>`
+<div class="attach-card">
+${x.file?.type==='image'
+?`<img src="${x.file.data}" alt="${x.title}">`
+:`<div class="file-icon">📄</div>`}
+<h3>${x.title}</h3>
+<div class="muted">
+${tanggalPanjang(x.date)}<br>
+${x.category}<br>
+${x.amount?rp(x.amount):'Tanpa nominal'}<br>
+${x.note||'-'}
+</div>
+<button class="secondary" onclick="openAttachment(${x.id})">Buka</button>
+<button class="small" onclick="delAttachment(${x.id})">Hapus</button>
+</div>
+`).join(''):'Belum ada lampiran.';
+}
+
+
+
+function showDashboardDetail(type){
+let s=AS();
+if(!s)return alert('Belum ada shipment aktif.');
+
+let sid=s.id;
+let h=H().filter(x=>x.sid===sid);
+let l=L().filter(x=>x.sid===sid);
+let a=A().filter(x=>x.sid===sid);
+let c=C().filter(x=>x.sid===sid);
+let contracts=CT().filter(x=>x.sid===sid);
+
+let target=+s.target||0;
+let ton=l.reduce((z,x)=>z+(+x.ton||0),0);
+let progress=target>0?ton/target*100:0;
+let budget=h.reduce((z,x)=>z+(+x.total||0),0);
+let actual=a.reduce((z,x)=>z+(+x.total||0),0)+O().filter(x=>x.sid===sid).reduce((z,x)=>z+(+x.total||0),0);
+let contract=target*(+s.price||0);
+let masuk=c.filter(x=>x.type==='masuk').reduce((z,x)=>z+(+x.amt||0),0);
+let keluar=c.filter(x=>x.type==='keluar').reduce((z,x)=>z+(+x.amt||0),0);
+let saldo=masuk-keluar;
+let revenue=ton*(+s.price||0);
+let profit=revenue-actual;
+
+let title='',body='',go='dash';
+
+if(type==='contract'){
+title='Rincian Nilai Kontrak';
+let sale=contracts.filter(x=>x.type==='sale').reduce((z,x)=>z+(+x.value||0),0);
+let barge=contracts.filter(x=>x.type==='barge').reduce((z,x)=>z+(+x.value||0),0);
+let pbm=contracts.filter(x=>x.type==='pbm').reduce((z,x)=>z+(+x.value||0),0);
+body=`<div class="detail-grid">
+<div>Shipment</div><div>:</div><div>${s.no}</div>
+<div>Nilai utama</div><div>:</div><div>${rp(contract)}</div>
+<div>Jual beli ban</div><div>:</div><div>${rp(sale)}</div>
+<div>Tongkang</div><div>:</div><div>${rp(barge)}</div>
+<div>PBM</div><div>:</div><div>${rp(pbm)}</div>
+</div>`;
+go='contract';
+}else if(type==='target'){
+title='Rincian Target Shipment';
+body=`<div class="detail-grid">
+<div>Target tonase</div><div>:</div><div>${fm(target)} Ton</div>
+<div>Harga jual/ton</div><div>:</div><div>${rp(s.price||0)}</div>
+<div>Rute</div><div>:</div><div>${s.load||'-'} → ${s.dis||'-'}</div>
+<div>Status</div><div>:</div><div>${s.status||'-'}</div>
+</div>`;
+go='ship';
+}else if(type==='tonnage'){
+title='Rincian Tonase Aktual';
+body=`<div class="detail-grid">
+<div>Total tonase</div><div>:</div><div>${fm(ton)} Ton</div>
+<div>Total entri loading</div><div>:</div><div>${l.length}</div>
+<div>Rata-rata/entri</div><div>:</div><div>${fm(l.length?ton/l.length:0)} Ton</div>
+<div>Sisa target</div><div>:</div><div>${fm(Math.max(target-ton,0))} Ton</div>
+</div>`;
+go='loading';
+}else if(type==='progress'){
+title='Rincian Progress';
+body=`<div class="detail-grid">
+<div>Progress</div><div>:</div><div>${progress.toFixed(2)}%</div>
+<div>Target</div><div>:</div><div>${fm(target)} Ton</div>
+<div>Aktual</div><div>:</div><div>${fm(ton)} Ton</div>
+<div>Sisa</div><div>:</div><div>${fm(Math.max(target-ton,0))} Ton</div>
+</div>`;
+go='loading';
+}else if(type==='budget'){
+title='Rincian Budget';
+body=`<div class="detail-grid">
+<div>Total budget</div><div>:</div><div>${rp(budget)}</div>
+<div>Jumlah komponen</div><div>:</div><div>${h.length}</div>
+<div>Budget/target ton</div><div>:</div><div>${rp(target?budget/target:0)}</div>
+<div>Selisih realisasi</div><div>:</div><div>${rp(budget-actual)}</div>
+</div>`;
+go='hpp';
+}else if(type==='actual'){
+title='Rincian Realisasi Biaya';
+body=`<div class="detail-grid">
+<div>Total realisasi</div><div>:</div><div>${rp(actual)}</div>
+<div>Jumlah entri biaya</div><div>:</div><div>${a.length}</div>
+<div>HPP aktual/ton</div><div>:</div><div>${rp(ton?actual/ton:0)}</div>
+<div>Selisih budget</div><div>:</div><div>${rp(budget-actual)}</div>
+</div>`;
+go='actual';
+}else if(type==='cash'){
+title='Rincian Saldo Kas';
+body=`<div class="detail-grid">
+<div>Kas masuk</div><div>:</div><div class="green">${rp(masuk)}</div>
+<div>Kas keluar</div><div>:</div><div class="red">${rp(keluar)}</div>
+<div>Saldo</div><div>:</div><div><b>${rp(saldo)}</b></div>
+<div>Jumlah jurnal</div><div>:</div><div>${c.length}</div>
+</div>`;
+go='cash';
+}else{
+title='Rincian Profit Aktual';
+body=`<div class="detail-grid">
+<div>Pendapatan aktual</div><div>:</div><div>${rp(revenue)}</div>
+<div>Total biaya</div><div>:</div><div>${rp(actual)}</div>
+<div>Profit aktual</div><div>:</div><div><b>${rp(profit)}</b></div>
+<div>Profit/ton</div><div>:</div><div>${rp(ton?profit/ton:0)}</div>
+</div>`;
+go='profit';
+}
+
+journalDetail.innerHTML=`<h3>${title}</h3>${body}<button class="primary" onclick="closeJournalModal();openP('${go}')">Buka Halaman Terkait</button>`;
+journalModal.classList.add('show');
+}
+
+function showJournalDetail(id){
+let x=C().find(z=>z.id===id);
+if(!x)return alert('Data jurnal tidak ditemukan.');
+let s=SH().find(z=>z.id===x.sid);
+let typeLabel={
+masuk:'Kas Masuk',
+keluar:'Kas Keluar',
+piutang:'Piutang',
+hutang:'Hutang'
+}[x.type]||x.type;
+
+journalDetail.innerHTML=`
+<div class="detail-grid">
+<div>Shipment</div><div>:</div><div>${s?.no||'-'}</div>
+<div>Tanggal</div><div>:</div><div>${tanggalPanjang(x.date)}</div>
+<div>Jenis Jurnal</div><div>:</div><div>${typeLabel}</div>
+<div>Kategori</div><div>:</div><div>${x.cat||'-'}</div>
+<div>Keterangan</div><div>:</div><div>${x.note||'-'}</div>
+<div>Nominal</div><div>:</div><div class="${x.type==='masuk'?'green':x.type==='keluar'?'red':'money'}"><b>${rp(x.amt)}</b></div>
+<div>Nomor Referensi</div><div>:</div><div>JRN-${x.id}</div>
+</div>
+<hr style="border:0;border-top:1px solid #e5e7eb;margin:18px 0">
+<div class="row">
+<b>Dampak pada pencatatan</b>
+<div class="muted">${
+x.type==='masuk'?'Menambah saldo kas shipment.':
+x.type==='keluar'?'Mengurangi saldo kas shipment.':
+x.type==='piutang'?'Menambah nilai piutang yang harus ditagih.':
+'Menambah kewajiban utang yang harus dibayar.'
+}</div>
+</div>
+<button class="secondary" onclick="window.print()">Cetak Rincian</button>`;
+journalModal.classList.add('show');
+}
+function closeJournalModal(event){
+if(event&&event.target!==journalModal)return;
+journalModal.classList.remove('show');
+}
+
+
+function calcRitase(){
+let count=Math.max(+rCount.value||0,0);
+let rate=+rRate.value||0;
+let tonPer=+rTonPer.value||0;
+rTotal.value=Math.round(count*rate);
+rTotalTon.value=(count*tonPer).toFixed(2);
+}
+
+function addRitase(){
+let s=AS();
+if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+
+let count=+rCount.value||0;
+let rate=+rRate.value||0;
+let tonPer=+rTonPer.value||0;
+let total=count*rate;
+let totalTon=count*tonPer;
+
+if(!rDate.value||!rNo.value.trim()||!rPlate.value.trim()||!rDriver.value.trim()||count<=0||rate<=0){
+return alert('Lengkapi tanggal, nomor surat jalan, nomor polisi, sopir, jumlah rit, dan harga per rit.');
+}
+
+let data=RT();
+data.push({
+id:Date.now(),
+sid:s.id,
+date:rDate.value,
+no:rNo.value.trim(),
+plate:rPlate.value.trim(),
+driver:rDriver.value.trim(),
+count,
+rate,
+tonPer,
+totalTon,
+total,
+origin:rOrigin.value.trim(),
+destination:rDestination.value.trim(),
+cargo:rCargo.value.trim(),
+note:rNote.value.trim()
+});
+S(K.rt,data);
+
+rNo.value=rPlate.value=rDriver.value=rRate.value=rTonPer.value=rTotalTon.value=rTotal.value=rOrigin.value=rDestination.value=rNote.value='';
+rCount.value=1;
+rCargo.value='Ban Bekas Kondisi Alami';
+renderRitase();
+}
+
+function delRitase(id){
+if(!confirm('Hapus data ritase ini?'))return;
+S(K.rt,RT().filter(x=>x.id!==id));
+renderRitase();
+}
+
+function selectRitasePreview(id){
+ritasePrintSelect.value=String(id);
+previewRitase();
+}
+
+function renderRitase(){
+if(typeof ritaseList==='undefined')return;
+let s=AS();
+let data=s?RT().filter(x=>x.sid===s.id):[];
+
+let totalRit=data.reduce((z,x)=>z+(+x.count||0),0);
+let totalTon=data.reduce((z,x)=>z+(+x.totalTon||0),0);
+let totalCost=data.reduce((z,x)=>z+(+x.total||0),0);
+
+rEntries.textContent=data.length;
+rTotalCount.textContent=fm(totalRit)+' Rit';
+rSummaryTon.textContent=fm(totalTon)+' Ton';
+rSummaryCost.textContent=rp(totalCost);
+
+ritaseList.innerHTML=data.length?data.slice().reverse().map(x=>`
+<div class="row clickable" onclick="selectRitasePreview(${x.id})">
+<div class="head">
+<div>
+<b>${x.no} — ${x.plate}</b>
+<div class="muted">
+${tanggalPanjang(x.date)}<br>
+Sopir: ${x.driver}<br>
+${fm(x.count)} Rit × ${rp(x.rate)} = ${rp(x.total)}<br>
+Tonase: ${fm(x.totalTon)} Ton<br>
+${x.origin||'-'} → ${x.destination||'-'}<br>
+<span style="color:#1265ed">Ketuk untuk preview surat jalan</span>
+</div>
+</div>
+<span class="money">${rp(x.total)}</span>
+</div>
+<button class="small" onclick="event.stopPropagation();delRitase(${x.id})">Hapus</button>
+</div>
+`).join(''):'Belum ada data ritase.';
+
+ritasePrintSelect.innerHTML='<option value="">Pilih ritase</option>'+data.slice().reverse().map(x=>
+`<option value="${x.id}">${x.no} — ${x.plate} — ${tanggalPanjang(x.date)}</option>`
+).join('');
+}
+
+function previewRitase(){
+let id=+ritasePrintSelect.value;
+let x=RT().find(z=>z.id===id);
+let s=AS();
+if(!x)return alert('Pilih ritase terlebih dahulu.');
+
+ritasePreviewBody.innerHTML=`
+<div class="docgrid">
+<div>Nomor Surat Jalan</div><div>:</div><div>${x.no}</div>
+<div>Tanggal</div><div>:</div><div>${tanggalPanjang(x.date)}</div>
+<div>Shipment</div><div>:</div><div>${s?.no||'-'}</div>
+<div>Nomor Polisi</div><div>:</div><div>${x.plate}</div>
+<div>Nama Sopir</div><div>:</div><div>${x.driver}</div>
+<div>Asal Muat</div><div>:</div><div>${x.origin||'-'}</div>
+<div>Tujuan</div><div>:</div><div>${x.destination||'-'}</div>
+<div>Jenis Muatan</div><div>:</div><div>${x.cargo||'-'}</div>
+<div>Jumlah Rit</div><div>:</div><div>${fm(x.count)} Rit</div>
+<div>Tonase per Rit</div><div>:</div><div>${fm(x.tonPer)} Ton</div>
+<div>Total Tonase</div><div>:</div><div>${fm(x.totalTon)} Ton</div>
+<div>Harga per Rit</div><div>:</div><div>${rp(x.rate)}</div>
+<div>Total Nilai</div><div>:</div><div><b>${rp(x.total)}</b></div>
+<div>Keterangan</div><div>:</div><div>${x.note||'-'}</div>
+</div>
+<br>
+<table>
+<thead>
+<tr><th>No.</th><th>Uraian Muatan</th><th>Ritase</th><th>Tonase</th><th>Keterangan</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>${x.cargo||'-'}</td>
+<td>${fm(x.count)} Rit</td>
+<td>${fm(x.totalTon)} Ton</td>
+<td>${x.origin||'-'} → ${x.destination||'-'}</td>
+</tr>
+</tbody>
+</table>
+<div class="sig">
+<div>
+Pengirim<br>
+PT Kaltim Bumi Unggul
+<div class="space"></div>
+<b>Samuel Paserang</b>
+</div>
+<div>
+Sopir
+<div class="space"></div>
+<b>${x.driver}</b>
+</div>
+<div>
+Pengawas Tongkang / Penerima
+<div class="space"></div>
+<b>(________________)</b>
+</div>
+</div>`;
+ritasePreview.scrollIntoView({behavior:'smooth'});
+}
+
+
+function calcRitPayment(){
+let normal=+rpNormalCount.value||0;
+let overtime=+rpOvertimeCount.value||0;
+let rateN=+rpRateNormal.value||0;
+let rateO=+rpRateOvertime.value||0;
+let bill=normal*rateN+overtime*rateO;
+let paid=+rpPaidNow.value||0;
+let remain=Math.max(bill-paid,0);
+
+rpBill.value=Math.round(bill);
+rpRemain.value=Math.round(remain);
+rpStatus.value=paid<=0?'Belum Dibayar':paid>=bill&&bill>0?'Lunas':'Dibayar Sebagian';
+}
+
+function refreshRitPayDrivers(){
+if(typeof rpDriver==='undefined')return;
+let s=AS();
+let names=s?[...new Set(RT().filter(x=>x.sid===s.id).map(x=>x.driver).filter(Boolean))]:[];
+let old=rpDriver.value;
+rpDriver.innerHTML='<option value="">Pilih sopir</option>'+names.map(x=>`<option>${x}</option>`).join('');
+if(names.includes(old))rpDriver.value=old;
+}
+
+function addRitPayment(){
+let s=AS();
+if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+
+let driver=rpDriver.value;
+let normal=+rpNormalCount.value||0;
+let overtime=+rpOvertimeCount.value||0;
+let rateN=+rpRateNormal.value||0;
+let rateO=+rpRateOvertime.value||0;
+let bill=normal*rateN+overtime*rateO;
+let paid=+rpPaidNow.value||0;
+
+if(!rpDate.value||!driver||bill<=0){
+return alert('Lengkapi tanggal, sopir, jumlah rit, dan tarif.');
+}
+if(paid<0||paid>bill){
+return alert('Nominal pembayaran tidak valid.');
+}
+
+let data=RP();
+data.push({
+id:Date.now(),
+sid:s.id,
+date:rpDate.value,
+driver,
+normal,
+overtime,
+rateN,
+rateO,
+bill,
+paid,
+remain:bill-paid,
+status:paid>=bill?'Lunas':paid>0?'Dibayar Sebagian':'Belum Dibayar',
+note:rpNote.value.trim()
+});
+S(K.rp,data);
+
+rpNormalCount.value=rpOvertimeCount.value=rpPaidNow.value=rpBill.value=rpRemain.value=rpNote.value='';
+rpStatus.value='';
+renderRitPayments();
+}
+
+function payMoreRit(id){
+let data=RP();
+let x=data.find(z=>z.id===id);
+if(!x)return;
+
+let input=prompt('Masukkan pembayaran tambahan:',0);
+if(input===null)return;
+let add=+input||0;
+if(add<=0)return alert('Nominal tidak valid.');
+
+x.paid=Math.min((+x.paid||0)+add,+x.bill||0);
+x.remain=Math.max((+x.bill||0)-x.paid,0);
+x.status=x.paid>=x.bill?'Lunas':'Dibayar Sebagian';
+S(K.rp,data);
+renderRitPayments();
+}
+
+function delRitPayment(id){
+if(!confirm('Hapus data pembayaran ini?'))return;
+S(K.rp,RP().filter(x=>x.id!==id));
+renderRitPayments();
+}
+
+function selectRitPayPreview(id){
+ritPayPrintSelect.value=String(id);
+previewRitPayment();
+}
+
+function renderRitPayments(){
+if(typeof ritPayList==='undefined')return;
+
+refreshRitPayDrivers();
+let s=AS();
+let data=s?RP().filter(x=>x.sid===s.id):[];
+
+let totalBill=data.reduce((z,x)=>z+(+x.bill||0),0);
+let totalPaid=data.reduce((z,x)=>z+(+x.paid||0),0);
+let totalRemain=data.reduce((z,x)=>z+(+x.remain||0),0);
+let totalNormal=data.reduce((z,x)=>z+(+x.normal||0),0);
+let totalOvertime=data.reduce((z,x)=>z+(+x.overtime||0),0);
+let drivers=[...new Set(data.map(x=>x.driver))];
+
+rpTotalBill.textContent=rp(totalBill);
+rpTotalPaid.textContent=rp(totalPaid);
+rpTotalRemain.textContent=rp(totalRemain);
+rpDriverCount.textContent=drivers.length;
+rpTotalNormal.textContent=fm(totalNormal)+' Rit';
+rpTotalOvertime.textContent=fm(totalOvertime)+' Rit';
+
+ritPaySummary.innerHTML=drivers.length?drivers.map(name=>{
+let rows=data.filter(x=>x.driver===name);
+let bill=rows.reduce((z,x)=>z+(+x.bill||0),0);
+let paid=rows.reduce((z,x)=>z+(+x.paid||0),0);
+let normal=rows.reduce((z,x)=>z+(+x.normal||0),0);
+let overtime=rows.reduce((z,x)=>z+(+x.overtime||0),0);
+return `<div class=row>
+<div class=head>
+<div>
+<b>${name}</b>
+<div class=muted>
+Rit normal: ${fm(normal)}<br>
+Rit lembur: ${fm(overtime)}<br>
+Tagihan: ${rp(bill)}<br>
+Dibayar: ${rp(paid)}<br>
+Sisa: ${rp(bill-paid)}
+</div>
+</div>
+<span class=money>${rp(bill-paid)}</span>
+</div>
+</div>`;
+}).join(''):'Belum ada rekap pembayaran sopir.';
+
+ritPayList.innerHTML=data.length?data.slice().reverse().map(x=>`
+<div class="row clickable" onclick="selectRitPayPreview(${x.id})">
+<div class=head>
+<div>
+<b>${x.driver} — ${tanggalPanjang(x.date)}</b>
+<div class=muted>
+Normal: ${fm(x.normal)} × ${rp(x.rateN)}<br>
+Lembur: ${fm(x.overtime)} × ${rp(x.rateO)}<br>
+Status: ${x.status}<br>
+Keterangan: ${x.note||'-'}<br>
+<span style="color:#1265ed">Ketuk untuk preview</span>
+</div>
+</div>
+<span class=money>${rp(x.bill)}</span>
+</div>
+<div class=muted>Dibayar ${rp(x.paid)} • Sisa ${rp(x.remain)}</div>
+<div class="two">
+<button class=secondary onclick="event.stopPropagation();payMoreRit(${x.id})">Tambah Bayar</button>
+<button class=small onclick="event.stopPropagation();delRitPayment(${x.id})">Hapus</button>
+</div>
+</div>
+`).join(''):'Belum ada pembayaran ritase.';
+
+ritPayPrintSelect.innerHTML='<option value="">Pilih pembayaran</option>'+data.slice().reverse().map(x=>
+`<option value="${x.id}">${x.driver} — ${tanggalPanjang(x.date)} — ${rp(x.bill)}</option>`
+).join('');
+}
+
+function previewRitPayment(){
+let id=+ritPayPrintSelect.value;
+let x=RP().find(z=>z.id===id);
+let s=AS();
+if(!x)return alert('Pilih pembayaran terlebih dahulu.');
+
+ritPayPreviewBody.innerHTML=`
+<h2 class="doctitle">PERTANGGUNGJAWABAN PEMBAYARAN RITASE</h2>
+<div class="docgrid">
+<div>Shipment</div><div>:</div><div>${s?.no||'-'}</div>
+<div>Tanggal Pembayaran</div><div>:</div><div>${tanggalPanjang(x.date)}</div>
+<div>Nama Sopir</div><div>:</div><div>${x.driver}</div>
+<div>Rit Normal</div><div>:</div><div>${fm(x.normal)} Rit × ${rp(x.rateN)}</div>
+<div>Rit Lembur</div><div>:</div><div>${fm(x.overtime)} Rit × ${rp(x.rateO)}</div>
+<div>Total Tagihan</div><div>:</div><div><b>${rp(x.bill)}</b></div>
+<div>Total Dibayar</div><div>:</div><div>${rp(x.paid)}</div>
+<div>Sisa Pembayaran</div><div>:</div><div>${rp(x.remain)}</div>
+<div>Status</div><div>:</div><div>${x.status}</div>
+<div>Keterangan</div><div>:</div><div>${x.note||'-'}</div>
+</div>
+<br>
+<table>
+<thead>
+<tr>
+<th>Uraian</th>
+<th>Jumlah Rit</th>
+<th>Tarif</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rit Normal</td>
+<td>${fm(x.normal)}</td>
+<td>${rp(x.rateN)}</td>
+<td>${rp(x.normal*x.rateN)}</td>
+</tr>
+<tr>
+<td>Rit Lembur</td>
+<td>${fm(x.overtime)}</td>
+<td>${rp(x.rateO)}</td>
+<td>${rp(x.overtime*x.rateO)}</td>
+</tr>
+<tr>
+<td colspan="3"><b>Total Tagihan</b></td>
+<td><b>${rp(x.bill)}</b></td>
+</tr>
+<tr>
+<td colspan="3">Sudah Dibayar</td>
+<td>${rp(x.paid)}</td>
+</tr>
+<tr>
+<td colspan="3">Sisa</td>
+<td>${rp(x.remain)}</td>
+</tr>
+</tbody>
+</table>
+<div class="sig">
+<div>
+Diserahkan Oleh
+<div class="space"></div>
+<b>Samuel Paserang</b><br>
+PT Kaltim Bumi Unggul
+</div>
+<div>
+Diterima Oleh
+<div class="space"></div>
+<b>${x.driver}</b>
+</div>
+</div>`;
+ritPayPreview.scrollIntoView({behavior:'smooth'});
+}
+
+
+function premiumDocNumber(type,date){
+let d=date?new Date(date+'T00:00:00'):new Date();
+let month=String(d.getMonth()+1).padStart(2,'0');
+let year=d.getFullYear();
+let code={
+'Invoice':'INV',
+'Packing List':'PL',
+'Surat Jalan':'SJ',
+'Manifest':'MNF',
+'Berita Acara Muat':'BAM',
+'Berita Acara Bongkar':'BAB',
+'BAST':'BAST',
+'SKAB':'SKAB',
+'Surat Penunjukan PBM':'SPPBM'
+}[type]||'DOC';
+return `${code}/KBU/${String(Date.now()).slice(-4)}/${month}/${year}`;
+}
+
+function autoFillPremiumDoc(){
+let s=AS();
+if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+pdParty.value=s.buyer||'';
+pdOrigin.value=s.load||'';
+pdDestination.value=s.dis||'';
+pdQty.value=s.target||'';
+pdRate.value=s.price||'';
+pdTugboat.value=s.tugboat||'';
+pdBarge.value=s.barge||'';
+}
+
+function renderPremiumDoc(){
+let type=pdType.value;
+let no=pdNo.value.trim()||premiumDocNumber(type,pdDate.value);
+let qty=+pdQty.value||0;
+let rate=+pdRate.value||0;
+let total=qty*rate;
+let s=AS();
+
+pdTitle.textContent=type.toUpperCase();
+pdNumberBadge.textContent='Nomor: '+no;
+
+let common=`
+<div class="doc-meta">
+<div>Tanggal</div><div>:</div><div>${tanggalPanjang(pdDate.value)}</div>
+<div>Shipment</div><div>:</div><div>${s?.no||'-'}</div>
+<div>Pihak Terkait</div><div>:</div><div>${pdParty.value||'-'}</div>
+<div>Asal</div><div>:</div><div>${pdOrigin.value||'-'}</div>
+<div>Tujuan</div><div>:</div><div>${pdDestination.value||'-'}</div>
+<div>Tugboat</div><div>:</div><div>${pdTugboat.value||'-'}</div>
+<div>Tongkang</div><div>:</div><div>${pdBarge.value||'-'}</div>
+</div>`;
+
+let table=`
+<table class="doc-table">
+<thead>
+<tr><th>No.</th><th>Uraian</th><th>Jumlah/Tonase</th><th>Harga/Ton</th><th>Total</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td>${pdItem.value||'-'}</td>
+<td style="text-align:right">${fm(qty)} Ton</td>
+<td style="text-align:right">${rp(rate)}</td>
+<td style="text-align:right">${rp(total)}</td>
+</tr>
+</tbody>
+</table>`;
+
+let body='';
+if(type==='Invoice'){
+body=common+table+`
+<p style="margin-top:16px"><b>Terbilang:</b> ${rp(total)}</p>
+<p><b>Rekening Pembayaran:</b><br>
+Bank BCA — 7995301016<br>
+a.n. Samuel Paserang</p>`;
+}else if(type==='Packing List'||type==='Manifest'){
+body=common+table+`
+<p style="margin-top:16px"><b>Keterangan:</b> ${pdNote.value||'-'}</p>`;
+}else if(type==='Surat Jalan'){
+body=common+`
+<table class="doc-table">
+<thead><tr><th>No.</th><th>Jenis Muatan</th><th>Tonase</th><th>Keterangan</th></tr></thead>
+<tbody><tr><td>1</td><td>${pdItem.value||'-'}</td><td>${fm(qty)} Ton</td><td>${pdNote.value||'-'}</td></tr></tbody>
+</table>`;
+}else if(type==='Berita Acara Muat'||type==='Berita Acara Bongkar'||type==='BAST'){
+body=common+`
+<p style="line-height:1.7;text-align:justify">
+Pada ${tanggalPanjang(pdDate.value)}, telah dilaksanakan ${type.toLowerCase()} untuk
+${pdItem.value||'-'} sebanyak ${fm(qty)} ton pada rute ${pdOrigin.value||'-'} menuju
+${pdDestination.value||'-'}. Seluruh kegiatan telah diperiksa dan disepakati oleh para pihak.
+</p>
+<p><b>Keterangan:</b> ${pdNote.value||'-'}</p>`;
+}else if(type==='SKAB'){
+body=common+`
+<p style="line-height:1.7;text-align:justify">
+Dengan ini diterangkan bahwa ${pdItem.value||'-'} sebanyak ${fm(qty)} ton merupakan barang
+yang akan diangkut dari ${pdOrigin.value||'-'} menuju ${pdDestination.value||'-'} melalui
+sarana angkut yang tercantum pada dokumen ini.
+</p>`;
+}else{
+body=common+`
+<p style="line-height:1.7;text-align:justify">
+PT Kaltim Bumi Unggul dengan ini menunjuk ${pdParty.value||'-'} untuk melaksanakan pekerjaan
+PBM, bongkar muat, penanganan stockpile, dan/atau mobilisasi barang sesuai kebutuhan shipment aktif.
+</p>
+<p><b>Ruang lingkup:</b> ${pdItem.value||'-'}</p>
+<p><b>Keterangan:</b> ${pdNote.value||'-'}</p>`;
+}
+
+let signatures=`
+<div class="sig">
+<div>
+Dibuat Oleh
+<div class="space"></div>
+<b>Samuel Paserang</b><br>
+Direktur PT Kaltim Bumi Unggul
+</div>
+<div>
+Pihak Terkait
+<div class="space"></div>
+<b>${pdParty.value||'(________________)'}</b>
+</div>
+</div>`;
+
+pdBody.innerHTML=body+signatures;
+pdNo.value=no;
+premiumDoc.scrollIntoView({behavior:'smooth'});
+}
+
+
+function setPrintArea(html){
+let area=document.getElementById('printArea');
+if(!area)return;
+area.innerHTML=html;
+}
+
+function preparePremiumPrint(){
+let premium=document.getElementById('premiumDoc');
+if(!premium)return alert('Preview dokumen belum tersedia.');
+setPrintArea(`<div id="premiumDoc" class="premium-doc">${premium.innerHTML}</div>`);
+setTimeout(()=>window.print(),100);
+}
+
+function printCurrentArea(){
+let host=document.getElementById('finalReportHost');
+if(!host||!host.innerHTML.trim())return alert('Tampilkan laporan akhir terlebih dahulu.');
+setPrintArea(host.innerHTML);
+setTimeout(()=>window.print(),100);
+}
+
+function safeRows(arr, mapper){
+return arr.length?arr.map(mapper).join(''):'<tr><td colspan="6">Belum ada data.</td></tr>';
+}
+
+function buildFinalReport(){
+let s=AS();
+if(!s)return alert('Pilih shipment aktif terlebih dahulu.');
+
+let sid=s.id;
+let budgets=H().filter(x=>x.sid===sid);
+let loading=L().filter(x=>x.sid===sid);
+let ops=O().filter(x=>x.sid===sid);
+let actuals=A().filter(x=>x.sid===sid);
+let cash=C().filter(x=>x.sid===sid);
+let contracts=CT().filter(x=>x.sid===sid);
+let billing=BL().filter(x=>x.sid===sid);
+let daily=DY().filter(x=>x.sid===sid);
+let attaches=AT().filter(x=>x.sid===sid);
+let ritase=RT().filter(x=>x.sid===sid);
+let ritpay=RP().filter(x=>x.sid===sid);
+
+let ton=loading.reduce((z,x)=>z+(+x.ton||0),0);
+let rit=ritase.reduce((z,x)=>z+(+x.count||0),0);
+let budgetTotal=budgets.reduce((z,x)=>z+(+x.total||0),0);
+let actualTotal=actuals.reduce((z,x)=>z+(+x.total||0),0)+ops.reduce((z,x)=>z+(+x.total||0),0);
+let cashIn=cash.filter(x=>x.type==='masuk').reduce((z,x)=>z+(+x.amt||0),0);
+let cashOut=cash.filter(x=>x.type==='keluar').reduce((z,x)=>z+(+x.amt||0),0);
+let saldo=cashIn-cashOut;
+let revenue=ton*(+s.price||0);
+let profit=revenue-actualTotal;
+let margin=revenue>0?profit/revenue*100:0;
+let piutang=billing.filter(x=>x.kind==='piutang').reduce((z,x)=>z+((+x.amount||0)-(+x.paid||0)),0);
+let utang=billing.filter(x=>x.kind==='utang').reduce((z,x)=>z+((+x.amount||0)-(+x.paid||0)),0);
+
+let report=`
+<div class="premium-doc">
+<div class="premium-head">
+<div class="logo-kbu"><img class="logo-kbu-img" src="logo.png" alt="Logo KBU"></div>
+<div>
+<h1>PT KALTIM BUMI UNGGUL</h1>
+<p>Jl. Yos Sudarso 1, Gg. Bakti Jaya 2 No. 68</p>
+<p>Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur</p>
+<p>Telp. 0852-4611-2611</p>
+</div>
+</div>
+
+<div style="text-align:center;margin:20px 0">
+<h2 style="margin:0">LAPORAN AKHIR SHIPMENT</h2>
+<div class="doc-number">Shipment: ${s.no||'-'}</div>
+</div>
+
+<div class="doc-meta">
+<div>Buyer</div><div>:</div><div>${s.buyer||'-'}</div>
+<div>Rute</div><div>:</div><div>${s.load||'-'} → ${s.dis||'-'}</div>
+<div>Target Tonase</div><div>:</div><div>${fm(s.target||0)} Ton</div>
+<div>Tonase Aktual</div><div>:</div><div>${fm(ton)} Ton</div>
+<div>Total Ritase</div><div>:</div><div>${fm(rit)} Rit</div>
+<div>Nilai Kontrak</div><div>:</div><div>${rp((+s.target||0)*(+s.price||0))}</div>
+<div>Total Budget</div><div>:</div><div>${rp(budgetTotal)}</div>
+<div>Total Realisasi</div><div>:</div><div>${rp(actualTotal)}</div>
+<div>Saldo Kas</div><div>:</div><div>${rp(saldo)}</div>
+<div>Profit Aktual</div><div>:</div><div>${rp(profit)}</div>
+<div>Margin</div><div>:</div><div>${margin.toFixed(2)}%</div>
+<div>Sisa Piutang</div><div>:</div><div>${rp(piutang)}</div>
+<div>Sisa Utang</div><div>:</div><div>${rp(utang)}</div>
+</div>
+
+<h3>1. RINGKASAN BUDGET HPP</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Komponen</th><th>Metode</th><th>Qty</th><th>Harga</th><th>Total</th></tr></thead><tbody>
+${safeRows(budgets,(x,i)=>`<tr><td>${i+1}</td><td>${x.name||'-'}</td><td>${x.method||'-'}</td><td>${fm(x.qty||0)}</td><td>${rp(x.price||0)}</td><td>${rp(x.total||0)}</td></tr>`)}
+</tbody></table>
+
+<h3>2. REALISASI BIAYA</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Tanggal</th><th>Kategori</th><th>Keterangan</th><th>Nilai</th></tr></thead><tbody>
+${safeRows(actuals,(x,i)=>`<tr><td>${i+1}</td><td>${tanggalPanjang(x.date)}</td><td>${x.cat||'-'}</td><td>${x.note||'-'}</td><td>${rp(x.total||0)}</td></tr>`)}
+</tbody></table>
+
+<h3>3. JURNAL KEUANGAN</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Tanggal</th><th>Jenis</th><th>Kategori</th><th>Keterangan</th><th>Nominal</th></tr></thead><tbody>
+${safeRows(cash,(x,i)=>`<tr><td>${i+1}</td><td>${tanggalPanjang(x.date)}</td><td>${x.type||'-'}</td><td>${x.cat||'-'}</td><td>${x.note||'-'}</td><td>${rp(x.amt||0)}</td></tr>`)}
+</tbody></table>
+
+<h3>4. REKAP LOADING & RITASE</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Tanggal</th><th>Surat Jalan</th><th>Sopir</th><th>Rit</th><th>Tonase</th><th>Nilai</th></tr></thead><tbody>
+${safeRows(ritase,(x,i)=>`<tr><td>${i+1}</td><td>${tanggalPanjang(x.date)}</td><td>${x.no||'-'}</td><td>${x.driver||'-'}</td><td>${fm(x.count||0)}</td><td>${fm(x.totalTon||0)} Ton</td><td>${rp(x.total||0)}</td></tr>`)}
+</tbody></table>
+
+<h3>5. KONTRAK</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Jenis</th><th>Nomor</th><th>Pihak Kedua</th><th>Nilai</th><th>Status</th></tr></thead><tbody>
+${safeRows(contracts,(x,i)=>`<tr><td>${i+1}</td><td>${contractName(x.type)}</td><td>${x.no||'-'}</td><td>${x.party||'-'}</td><td>${rp(x.value||0)}</td><td>${x.status||'-'}</td></tr>`)}
+</tbody></table>
+
+<h3>6. TERMIN, PIUTANG & UTANG</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Jenis</th><th>Termin</th><th>Pihak</th><th>Nilai</th><th>Dibayar</th><th>Sisa</th></tr></thead><tbody>
+${safeRows(billing,(x,i)=>`<tr><td>${i+1}</td><td>${x.kind||'-'}</td><td>${x.name||'-'}</td><td>${x.party||'-'}</td><td>${rp(x.amount||0)}</td><td>${rp(x.paid||0)}</td><td>${rp((+x.amount||0)-(+x.paid||0))}</td></tr>`)}
+</tbody></table>
+
+<h3>7. LAPORAN HARIAN</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Tanggal</th><th>Shift</th><th>Rit</th><th>Tonase</th><th>Kegiatan/Kendala</th></tr></thead><tbody>
+${safeRows(daily,(x,i)=>`<tr><td>${i+1}</td><td>${tanggalPanjang(x.date)}</td><td>${x.shift||'-'}</td><td>${fm(x.rit||0)}</td><td>${fm(x.ton||0)}</td><td>${x.activity||'-'}<br>${x.problem||'-'}</td></tr>`)}
+</tbody></table>
+
+<h3>8. PEMBAYARAN RITASE SOPIR</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Sopir</th><th>Normal</th><th>Lembur</th><th>Tagihan</th><th>Dibayar</th><th>Sisa</th></tr></thead><tbody>
+${safeRows(ritpay,(x,i)=>`<tr><td>${i+1}</td><td>${x.driver||'-'}</td><td>${fm(x.normal||0)}</td><td>${fm(x.overtime||0)}</td><td>${rp(x.bill||0)}</td><td>${rp(x.paid||0)}</td><td>${rp(x.remain||0)}</td></tr>`)}
+</tbody></table>
+
+<h3>9. DAFTAR LAMPIRAN</h3>
+<table class="doc-table"><thead><tr><th>No</th><th>Tanggal</th><th>Kategori</th><th>Judul</th><th>Nominal</th><th>Keterangan</th></tr></thead><tbody>
+${safeRows(attaches,(x,i)=>`<tr><td>${i+1}</td><td>${tanggalPanjang(x.date)}</td><td>${x.category||'-'}</td><td>${x.title||'-'}</td><td>${rp(x.amount||0)}</td><td>${x.note||'-'}</td></tr>`)}
+</tbody></table>
+
+<div class="sig">
+<div>
+Dibuat Oleh
+<div class="space"></div>
+<b>Samuel Paserang</b><br>
+Direktur PT Kaltim Bumi Unggul
+</div>
+<div>
+Mengetahui
+<div class="space"></div>
+<b>(________________)</b>
+</div>
+</div>
+
+<div class="doc-footer">
+<div>PT Kaltim Bumi Unggul</div>
+<div>Laporan Akhir Shipment</div>
+</div>
+</div>`;
+
+finalReportHost.innerHTML=report;
+setPrintArea(report);
+finalReportHost.scrollIntoView({behavior:'smooth'});
+}
+
+function render(){renderOps();renderContracts();renderBilling();renderProfit();renderDaily();renderAttachments();renderRitase();renderRitPayments();let m=M(),s=AS(),sid=s?.id,h=H().filter(x=>x.sid===sid),l=L().filter(x=>x.sid===sid),a=A().filter(x=>x.sid===sid),c=C().filter(x=>x.sid===sid);opts(sBuyer,m.buyer);opts(sSupplier,m.supplier);opts(sLoad,m.pelabuhan);opts(sDis,m.pelabuhan);opts(sTug,m.kapal);opts(sBarge,m.kapal);mList.innerHTML=(m[mt].length?m[mt].map(x=>`<div class=row><b>${x.name}</b><div class=muted>${x.note||'-'}</div><button class=small onclick=delM(${x.id})>Hapus</button></div>`).join(''):'Belum ada data.');
+let ton=l.reduce((z,x)=>z+x.ton,0),target=s?.target||0,prog=target?ton/target*100:0,bud=h.reduce((z,x)=>z+x.total,0),act=a.reduce((z,x)=>z+x.total,0),contract=s?target*s.price:0,masuk=c.filter(x=>x.type==='masuk').reduce((z,x)=>z+x.amt,0),keluar=c.filter(x=>x.type==='keluar').reduce((z,x)=>z+x.amt,0),saldo=masuk-keluar,profit=contract-act;dKontrak.textContent=rp(contract);dTarget.textContent=fm(target)+' Ton';dTon.textContent=fm(ton)+' Ton';dProg.textContent=prog.toFixed(2)+'%';dBudget.textContent=rp(bud);dActual.textContent=rp(act);dSaldo.textContent=rp(saldo);dSaldo.className=saldo>=0?'green':'red';dProfit.textContent=rp(profit);dProfit.className=profit>=0?'green':'red';bar.style.width=Math.min(prog,100)+'%';progText.textContent=prog.toFixed(2)+'% dari target';activeShip.innerHTML=s?`<b>${s.no} — ${s.name}</b><p>Buyer: ${s.buyer||'-'}</p><p>Rute: ${s.load||'-'} → ${s.dis||'-'}</p><p>${s.tug||'-'} / ${s.barge||'-'}</p><p>Status: ${s.status}</p>`:'Belum ada shipment aktif.';
+shipList.innerHTML=SH().length?SH().map(x=>`<div class=row><div class=head><div><b>${x.no} — ${x.name}</b><div class=muted>${x.buyer||'-'}<br>${fm(x.target)} Ton • ${x.status}</div></div>${x.id===sid?'<b class=green>AKTIF</b>':''}</div><button class=secondary onclick=active(${x.id})>Jadikan Aktif</button><button class=small onclick=delS(${x.id})>Hapus</button></div>`).join(''):'Belum ada shipment.';
+hList.innerHTML=h.length?h.map(x=>`<div class=row><div class=head><div><b>${x.name}</b><div class=muted>${x.type}<br>${fm(x.qty)} × ${rp(x.price)}</div></div><span class=money>${rp(x.total)}</span></div><button class=small onclick=delH(${x.id})>Hapus</button></div>`).join(''):'Belum ada budget.';aHpp.innerHTML=h.length?'<option value="">Pilih</option>'+h.map(x=>`<option value=${x.id}>${x.name}</option>`).join(''):'<option>Belum ada HPP</option>';
+lList.innerHTML=l.length?l.slice().reverse().map(x=>`<div class=row><b>${x.date}</b><div class=muted>${fm(x.rit)} Rit • ${fm(x.ton)} Ton<br>${x.start||'-'}–${x.end||'-'}<br>${x.note||'-'}</div><button class=small onclick=delL(${x.id})>Hapus</button></div>`).join(''):'Belum ada loading.';aList.innerHTML=a.length?a.slice().reverse().map(x=>`<div class=row><div class=head><div><b>${x.name}</b><div class=muted>${x.date}<br>${x.supplier||'-'} • ${x.status}</div></div><span class=money>${rp(x.total)}</span></div><button class=small onclick=delA(${x.id})>Hapus</button></div>`).join(''):'Belum ada realisasi.';cList.innerHTML=c.length?c.slice().reverse().map(x=>`<div class="row clickable" onclick="showJournalDetail(${x.id})"><div class=head><div><b>${x.cat}</b><div class=muted>${x.date}<br>${x.type.toUpperCase()}<br>${x.note||'-'}<br><span style="color:#1265ed">Ketuk untuk lihat rincian</span></div></div><span class=${x.type==='masuk'?'green':x.type==='keluar'?'red':'money'}>${rp(x.amt)}</span></div><button class=small onclick="event.stopPropagation();delC(${x.id})">Hapus</button></div>`).join(''):'Belum ada transaksi.';fillDoc()}
+function fillDoc(){let s=AS();if(!s)return;docCons.value=s.buyer||'';docTug.value=s.tug||'';docBarge.value=s.barge||'';docLoad.value=s.load||'';docDis.value=s.dis||'';docQty.value=s.target||'';docPrice.value=s.price||''}
+function esc(s){return String(s||'-').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}function di(v){return v?new Date(v+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'long',year:'numeric'}):'-'}
+function renderDoc(){let title=dType.value,qty=+docQty.value||0,price=+docPrice.value||0;preview.innerHTML=`<div class=dochead><h2>PT KALTIM BUMI UNGGUL</h2><p>Jl. Yos Sudarso 1, Gg. Bakti Jaya 2 No. 68, Sangatta Utara</p></div><h2 class=doctitle>${esc(title)}</h2><div class=docgrid><b>Nomor</b><span>:</span><span>${esc(docNo.value)}</span><b>Tanggal</b><span>:</span><span>${di(docDate.value)}</span><b>Shipper</b><span>:</span><span>${esc(docShip.value)}</span><b>Consignee</b><span>:</span><span>${esc(docCons.value)}</span><b>Tug/Barge</b><span>:</span><span>${esc(docTug.value)} / ${esc(docBarge.value)}</span><b>Pelabuhan Muat</b><span>:</span><span>${esc(docLoad.value)}</span><b>Pelabuhan Bongkar</b><span>:</span><span>${esc(docDis.value)}</span><b>Barang</b><span>:</span><span>${esc(docGoods.value)}</span><b>Jumlah</b><span>:</span><span>${fm(qty)} TON</span><b>Nilai</b><span>:</span><span>${rp(qty*price)}</span><b>Keterangan</b><span>:</span><span>${esc(docNote.value)}</span></div><div class=sig><div><p>PIHAK PENGIRIM</p><div class=space></div><b>PT KALTIM BUMI UNGGUL</b></div><div><p>PIHAK PENERIMA</p><div class=space></div><b>${esc(docCons.value)}</b></div></div>`}
+function backup(){let d={master:M(),ship:SH(),active:AI(),hpp:H(),loading:L(),actual:A(),cash:C(),operations:O()},a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));a.download='kbu_operasional_v6_backup.json';a.click()}function restoreData(){let f=restore.files[0];if(!f)return alert('Pilih file.');let r=new FileReader();r.onload=e=>{try{let d=JSON.parse(e.target.result);S(K.m,d.master||M());S(K.s,d.ship||[]);S(K.act,d.active||null);S(K.h,d.hpp||[]);S(K.l,d.loading||[]);S(K.a,d.actual||[]);S(K.c,d.cash||[]);S(K.o,d.operations||[]);render()}catch(e){alert('File tidak valid')}};r.readAsText(f)}function resetData(){if(confirm('Hapus semua data?')){Object.values(K).forEach(x=>localStorage.removeItem(x));location.reload()}}
+let now=new Date().toISOString().slice(0,10);lDate.value=aDate.value=cDate.value=docDate.value=oDate.value=ctDate.value=bDue.value=dDate.value=atDate.value=rDate.value=rpDate.value=pdDate.value=now;render();renderDoc();
+</script>
+<div id="journalModal" class="modal" onclick="closeJournalModal(event)">
+<div class="modal-box" onclick="event.stopPropagation()">
+<div class="modal-head">
+<h2>Rincian Jurnal</h2>
+<button class="modal-close" onclick="closeJournalModal()">✕</button>
+</div>
+<div id="journalDetail"></div>
+</div>
+</div>
+
+<script>
+(function(){
+  const logoData = 'logo.png';
+
+  function premiumShell(){
+    return `
+      <div class="premium-head">
+        <div class="logo-shell"><div class="logo-kbu"><img class="logo-kbu-img" src="${logoData}" alt="Logo KBU"></div></div>
+        <div class="premium-brand">
+          <h1>PT KALTIM BUMI UNGGUL</h1>
+          <p>Jl. Yos Sudarso 1, Gg. Bakti Jaya 2 No. 68</p>
+          <p>Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur</p>
+          <p>Telp. 0852-4611-2611</p>
+        </div>
+      </div>
+      <div class="premium-title-wrap">
+        <h2 id="pdTitle">DOKUMEN</h2>
+        <div id="pdNumberBadge" class="doc-number">Nomor: -</div>
+      </div>
+      <div id="pdBody"><p class="muted">Isi data lalu tekan “Tampilkan Preview”.</p></div>
+      <div class="doc-footer">
+        <div>PT Kaltim Bumi Unggul</div>
+        <div>Dokumen dibuat melalui KBU Operasional Pro</div>
+      </div>`;
+  }
+
+  function ensurePremiumShell(){
+    if(window.premiumDoc && (!document.getElementById('pdTitle') || !document.getElementById('pdBody') || !document.querySelector('#premiumDoc .logo-shell'))){
+      premiumDoc.innerHTML = premiumShell();
+    }
+  }
+
+  function h(v){
+    return (window.esc ? esc(v) : String(v ?? '-'));
+  }
+
+  window.autoFillPremiumDoc = function(){
+    let s = AS();
+    if(!s) return alert('Pilih shipment aktif terlebih dahulu.');
+    pdParty.value = s.buyer || '';
+    pdOrigin.value = s.load || '';
+    pdDestination.value = s.dis || '';
+    pdQty.value = s.target || '';
+    pdRate.value = s.price || '';
+    pdTugboat.value = s.tug || s.tugboat || '';
+    pdBarge.value = s.barge || '';
+  };
+
+  window.renderPremiumDoc = function(){
+    ensurePremiumShell();
+    let type = pdType.value;
+    let no = pdNo.value.trim() || premiumDocNumber(type,pdDate.value);
+    let qty = +pdQty.value || 0;
+    let rate = +pdRate.value || 0;
+    let total = qty * rate;
+    let s = AS();
+
+    document.getElementById('pdTitle').textContent = String(type || 'Dokumen').toUpperCase();
+    document.getElementById('pdNumberBadge').textContent = 'Nomor: ' + no;
+
+    let common = `
+      <div class="doc-meta">
+        <div>Tanggal</div><div>:</div><div>${tanggalPanjang(pdDate.value)}</div>
+        <div>Shipment</div><div>:</div><div>${h(s?.no || '-')}</div>
+        <div>Pihak Terkait</div><div>:</div><div>${h(pdParty.value || '-')}</div>
+        <div>Asal</div><div>:</div><div>${h(pdOrigin.value || '-')}</div>
+        <div>Tujuan</div><div>:</div><div>${h(pdDestination.value || '-')}</div>
+        <div>Tugboat</div><div>:</div><div>${h(pdTugboat.value || '-')}</div>
+        <div>Tongkang</div><div>:</div><div>${h(pdBarge.value || '-')}</div>
+      </div>`;
+
+    let table = `
+      <table class="doc-table">
+        <thead>
+          <tr><th style="width:52px">No.</th><th>Uraian</th><th style="width:150px">Jumlah/Tonase</th><th style="width:140px">Harga/Ton</th><th style="width:140px">Total</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tac">1</td>
+            <td>${h(pdItem.value || '-')}</td>
+            <td class="tar">${fm(qty)} Ton</td>
+            <td class="tar">${rp(rate)}</td>
+            <td class="tar">${rp(total)}</td>
+          </tr>
+        </tbody>
+      </table>`;
+
+    let body = '';
+    if(type === 'Invoice'){
+      body = common + table + `
+        <div class="amount-box">
+          <p><b>Terbilang:</b> ${rp(total)}</p>
+          <p><b>Rekening Pembayaran:</b><br>Bank BCA — 7995301016<br>a.n. Samuel Paserang</p>
+        </div>`;
+    } else if(type === 'Packing List' || type === 'Manifest'){
+      body = common + table + `<p class="doc-note"><b>Keterangan:</b> ${h(pdNote.value || '-')}</p>`;
+    } else if(type === 'Surat Jalan'){
+      body = common + `
+        <table class="doc-table">
+          <thead><tr><th style="width:52px">No.</th><th>Jenis Muatan</th><th style="width:140px">Tonase</th><th>Keterangan</th></tr></thead>
+          <tbody><tr><td class="tac">1</td><td>${h(pdItem.value || '-')}</td><td class="tar">${fm(qty)} Ton</td><td>${h(pdNote.value || '-')}</td></tr></tbody>
+        </table>`;
+    } else if(type === 'Berita Acara Muat' || type === 'Berita Acara Bongkar' || type === 'BAST'){
+      body = common + `
+        <p class="doc-note">Pada ${tanggalPanjang(pdDate.value)}, telah dilaksanakan ${String(type).toLowerCase()} untuk ${h(pdItem.value || '-') } sebanyak ${fm(qty)} ton pada rute ${h(pdOrigin.value || '-')} menuju ${h(pdDestination.value || '-')}. Seluruh kegiatan telah diperiksa dan disepakati oleh para pihak.</p>
+        <p class="doc-note"><b>Keterangan:</b> ${h(pdNote.value || '-')}</p>`;
+    } else if(type === 'SKAB'){
+      body = common + `
+        <p class="doc-note">Dengan ini diterangkan bahwa ${h(pdItem.value || '-')} sebanyak ${fm(qty)} ton merupakan barang yang akan diangkut dari ${h(pdOrigin.value || '-')} menuju ${h(pdDestination.value || '-')} melalui sarana angkut yang tercantum pada dokumen ini.</p>`;
+    } else {
+      body = common + `
+        <p class="doc-note">PT Kaltim Bumi Unggul dengan ini menunjuk ${h(pdParty.value || '-')} untuk melaksanakan pekerjaan PBM, bongkar muat, penanganan stockpile, dan/atau mobilisasi barang sesuai kebutuhan shipment aktif.</p>
+        <p class="doc-note"><b>Ruang lingkup:</b> ${h(pdItem.value || '-')}</p>
+        <p class="doc-note"><b>Keterangan:</b> ${h(pdNote.value || '-')}</p>`;
+    }
+
+    let signatures = `
+      <div class="sig">
+        <div>
+          <div class="sig-role">Dibuat Oleh</div>
+          <div class="signature-line"></div>
+          <div class="sig-name">Samuel Paserang</div>
+          <div class="sig-sub">Direktur PT Kaltim Bumi Unggul</div>
+        </div>
+        <div>
+          <div class="sig-role">Pihak Terkait</div>
+          <div class="signature-line"></div>
+          <div class="sig-name">${h(pdParty.value || '(________________)')}</div>
+          <div class="sig-sub">Penerima / Penanggung Jawab</div>
+        </div>
+      </div>`;
+
+    document.getElementById('pdBody').innerHTML = body + signatures;
+    pdNo.value = no;
+    premiumDoc.scrollIntoView({behavior:'smooth'});
+  };
+
+  window.preparePremiumPrint = function(){
+    ensurePremiumShell();
+    let premium = document.getElementById('premiumDoc');
+    if(!premium) return alert('Preview dokumen belum tersedia.');
+    setPrintArea(`<div id="premiumDoc" class="premium-doc">${premium.innerHTML}</div>`);
+    setTimeout(()=>window.print(),120);
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    ensurePremiumShell();
+    document.title = 'KBU Operasional Pro V7.8 Premium Dokumen';
+    const badge = document.querySelector('header .badge');
+    if(badge) badge.textContent = 'V7.8 • Premium Dokumen & Logo Rapi';
+    const mainTitle = document.querySelector('header h1');
+    if(mainTitle) mainTitle.textContent = 'KBU Operasional Pro';
+
+    const buttons = Array.from(document.querySelectorAll('#docs .card.no-print button'));
+    buttons.forEach(btn=>{
+      if((btn.textContent || '').trim() === 'Cetak / Simpan PDF'){
+        btn.onclick = function(){ preparePremiumPrint(); };
+      }
+    });
+  });
+})();
+</script>
+</body></html>
