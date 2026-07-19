@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kbu-v95-notifikasi-2-user';
+const CACHE_NAME = 'kbu-operasional-v9-6';
 const APP_FILES = [
   './', './index.html', './manifest.webmanifest', './logo.png',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png'
